@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join the Mission | Grow Green Foundation</title>
+  <meta name="description" content="Volunteer, partner, or enroll in coaching programs with Grow Green Foundation." />
+  <link rel="icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .form-header { margin-bottom: 3rem; text-align: left; }
+    .form-header h2 { font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--dark); font-family: var(--font-head); font-weight: 800; }
+    
+    .role-tabs { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .role-tab {
+      padding: 0.8rem 1.6rem; border-radius: 50px; border: 2px solid #edf2f7;
+      font-family: var(--font-head); font-weight: 700; font-size: 0.9rem;
+      cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background: white; color: var(--text-light);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .role-tab:hover { border-color: var(--green-pale); color: var(--green); transform: translateY(-2px); }
+    .role-tab.active { border-color: var(--green); background: var(--green); color: white; box-shadow: 0 4px 12px rgba(45,90,39,0.2); }
+
+    .form-success {
+      display: none; background: var(--green-pale); padding: 2rem; border-radius: var(--radius);
+      color: var(--green-dark); text-align: center; border-left: 5px solid var(--green);
+    }
+    .form-success i { font-size: 2.5rem; margin-bottom: 1rem; }
+    .form-success p { font-weight: 600; font-size: 1.05rem; line-height: 1.6; }
+  </style>
+</head>
+<body>
+<nav class="navbar scrolled">
+  <div class="nav-container">
+    <!-- Brand on Left -->
+    <a href="../index.html" class="nav-brand">
+      <img src="../assets/images/logo.jpg" alt="Logo" class="logo-img-main" />
+    </a>
+
+    <!-- Navigation Menu on Right -->
+    <div class="nav-wrapper-right">
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html#home" class="nav-link">HOME</a>
+        <a href="../index.html#vision-mission" class="nav-link">ABOUT</a>
+        <a href="services.html" class="nav-link">PROGRAMS</a>
+        <a href="../index.html#impact-map" class="nav-link">IMPACT</a>
+        <a href="join.html" class="nav-link">GET INVOLVED</a>
+      </div>
+      <a href="donate.html" class="btn-donate-nav">DONATE NOW</a>
+      
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1><i class="fas fa-hands-helping"></i> Join the Mission</h1>
+    <p>Whether you volunteer, partner, or enroll — every action creates change.</p>
+  </div>
+</div>
+
+<section class="form-section">
+  <div class="container">
+    <div class="form-card">
+      <div class="form-header">
+        <h2>How Would You Like to Get Involved?</h2>
+        <div class="role-tabs">
+          <button class="role-tab active" onclick="setRole('Volunteer', this)">🌱 Volunteer</button>
+          <button class="role-tab" onclick="setRole('Partner Organization', this)">🤝 Partner</button>
+          <button class="role-tab" onclick="setRole('Health Coaching Participant', this)">💚 Health Coaching</button>
+          <button class="role-tab" onclick="setRole('Wealth Coaching Participant', this)">💛 Wealth Coaching</button>
+        </div>
+      </div>
+      
+      <form id="joinForm" onsubmit="handleJoin(event)">
+        <input type="hidden" id="j-role" value="Volunteer" />
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="j-name">Full Name *</label>
+            <input type="text" id="j-name" class="form-input" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="j-email">Email Address *</label>
+            <input type="email" id="j-email" class="form-input" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="j-phone">Phone Number</label>
+            <input type="tel" id="j-phone" class="form-input" placeholder="+91 99999 99999" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="j-city">City / Country</label>
+            <input type="text" id="j-city" class="form-input" placeholder="e.g. Mumbai, India" />
+          </div>
+          <div class="form-group form-full">
+            <label class="form-label" for="j-msg">Tell us about yourself & why you want to join *</label>
+            <textarea id="j-msg" class="form-input" placeholder="Share your motivation, skills, or questions..." rows="5" required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary form-submit" style="width: auto; padding-left: 3rem; padding-right: 3rem; margin-top: 1rem;">
+          Submit My Application <i class="fas fa-paper-plane" style="margin-left: 10px;"></i>
+        </button>
+      </form>
+      <div class="form-success" id="joinSuccess" style="margin-top: 2rem;">
+        <i class="fas fa-check-circle"></i>
+        <p>Thank you for reaching out to Grow Green Foundation! Your interest helps us plant the seeds for a better tomorrow. Our team will respond within 24 hours. 🌿</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2024 Grow Green Foundation. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+function setRole(role, el) {
+  document.getElementById('j-role').value = role;
+  document.querySelectorAll('.role-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+function handleJoin(e) {
+  e.preventDefault();
+  document.getElementById('joinForm').style.display = 'none';
+  document.getElementById('joinSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>

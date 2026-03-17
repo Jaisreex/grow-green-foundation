@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Updates | Grow Green Foundation</title>
+    <link rel="icon" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        .blog-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        .blog-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .blog-content {
+            padding: 1.5rem;
+        }
+        .blog-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .blog-title {
+            font-family: var(--font-head);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        .blog-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .read-more {
+            color: var(--green);
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        .read-more:hover {
+            gap: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <!-- Brand on Left -->
+            <a href="../index.html" class="nav-brand">
+                <img src="../assets/images/logo.jpg" alt="Logo" class="logo-img-main">
+            </a>
+
+            <!-- Navigation Menu on Right -->
+            <div class="nav-wrapper-right">
+                <div class="nav-links" id="navLinks">
+                    <a href="../index.html#home" class="nav-link">HOME</a>
+                    <a href="../index.html#vision-mission" class="nav-link">ABOUT</a>
+                    <a href="services.html" class="nav-link">PROGRAMS</a>
+                    <a href="../index.html#impact-map" class="nav-link">IMPACT</a>
+                    <a href="join.html" class="nav-link">GET INVOLVED</a>
+                </div>
+                <a href="donate.html" class="btn-donate-nav">DONATE NOW</a>
+                
+                <!-- Mobile Hamburger -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1><i class="fas fa-newspaper"></i> Blog & Updates</h1>
+        <p>Stay updated with our latest tree planting drives, wellness tips, and financial wisdom.</p>
+    </div>
+
+    <section class="container" style="padding: 5rem 1.5rem;">
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <article class="blog-card reveal">
+                <img src="../assets/images/tree_planting.png" alt="Tree planting drive" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-date">March 15, 2024</span>
+                    <h2 class="blog-title">1,000 Fruit Trees Planted in suburban Mumbai</h2>
+                    <p class="blog-excerpt">Our latest drive brought together 200 volunteers to plant mango, guava, and jackfruit trees along public highways.</p>
+                    <a href="#" class="read-more">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-card reveal delay-1">
+                <img src="../assets/images/health_coaching.png" alt="Health coaching" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-date">March 10, 2024</span>
+                    <h2 class="blog-title">The Connection Between Nature and Mental Health</h2>
+                    <p class="blog-excerpt">Our wellness coaches explain how spending time in food forests can significantly reduce cortisol levels.</p>
+                    <a href="#" class="read-more">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="blog-card reveal delay-2">
+                <img src="../assets/images/wealth_coaching.png" alt="Wealth coaching" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-date">March 05, 2024</span>
+                    <h2 class="blog-title">5 Steps to Financial Stability in 2024</h2>
+                    <p class="blog-excerpt">Highlights from our latest wealth workshop on building a solid financial foundation with simple daily habits.</p>
+                    <a href="#" class="read-more">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Blog Post 4 -->
+            <article class="blog-card reveal">
+                <img src="../assets/images/community_activity.png" alt="Community gathering" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-date">February 28, 2024</span>
+                    <h2 class="blog-title">First Harvest Festival in our Kenya Food Forest</h2>
+                    <p class="blog-excerpt">Celebrating the first year of our global initiatives with the local community sharing their first harvest.</p>
+                    <a href="#" class="read-more">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Grow Green Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

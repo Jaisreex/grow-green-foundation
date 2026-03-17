@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | Grow Green Foundation</title>
+  <meta name="description" content="Explore our three pillars of impact: Tree Planting, Wellness Coaching, and Wealth Education." />
+  <link rel="icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .services-intro { padding: 8rem 0 4rem; text-align: center; background: var(--white); }
+    .services-intro h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 1.5rem; color: var(--dark); font-family: var(--font-head); font-weight: 900; }
+    .services-intro p { font-size: 1.2rem; color: var(--text-light); max-width: 800px; margin: 0 auto; line-height: 1.6; }
+
+    .pillar-section { padding: 6rem 0; }
+    .pillar-section:nth-child(even) { background: var(--bg-soft); }
+    
+    .pillar-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .pillar-content h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--green); font-family: var(--font-head); font-weight: 800; }
+    .pillar-content p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; line-height: 1.8; }
+    
+    .pillar-benefits { list-style: none; padding: 0; margin-bottom: 2.5rem; }
+    .pillar-benefits li { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; font-weight: 600; color: var(--dark); }
+    .pillar-benefits i { color: var(--green); font-size: 1.2rem; }
+    
+    .pillar-visual img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow-lg); transition: var(--transition); }
+    .pillar-visual img:hover { transform: scale(1.02); }
+
+    .harmony-section { padding: 8rem 0; background: var(--green); color: var(--white); text-align: center; }
+    .harmony-content h2 { font-size: 3rem; margin-bottom: 2rem; font-family: var(--font-head); font-weight: 900; }
+    .harmony-content p { font-size: 1.2rem; max-width: 900px; margin: 0 auto 4rem; opacity: 0.9; line-height: 1.8; }
+    
+    .harmony-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+    .harmony-item { background: rgba(255,255,255,0.1); padding: 3rem 2rem; border-radius: var(--radius); backdrop-filter: blur(10px); }
+    .harmony-item i { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--gold); }
+    .harmony-item h4 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--white); }
+
+    @media (max-width: 900px) {
+      .pillar-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .pillar-section:nth-child(even) .pillar-layout { direction: ltr; }
+      .pillar-layout .pillar-visual { order: -1; }
+      .harmony-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-brand">
+      <img src="../assets/images/logo.jpg" alt="Logo" class="logo-img-main" />
+    </a>
+    <div class="nav-wrapper-right">
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html#home" class="nav-link">HOME</a>
+        <a href="../index.html#vision-mission" class="nav-link">ABOUT</a>
+        <a href="services.html" class="nav-link">PROGRAMS</a>
+        <a href="../index.html#impact-map" class="nav-link">IMPACT</a>
+        <a href="join.html" class="nav-link">GET INVOLVED</a>
+      </div>
+      <a href="donate.html" class="btn-donate-nav">DONATE NOW</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="services-intro">
+  <div class="container container-reveal">
+    <div class="section-tag">What We Do</div>
+    <h1>Creating Holistic Impact</h1>
+    <p>We provide a three-dimensional approach to community development, addressing the root causes of hunger, physical exhaustion, and financial insecurity.</p>
+  </div>
+</header>
+
+<section class="pillar-section" id="tree-plantation">
+  <div class="container">
+    <div class="pillar-layout">
+      <div class="pillar-content reveal">
+        <div class="section-tag">Pillar I</div>
+        <h2>Tree Plantation & Ecosystems</h2>
+        <p>We transform public spaces into living food forests. By planting fruit trees along roads and in parks, we create permanent, self-sustaining nourishment sources for everyone.</p>
+        <ul class="pillar-benefits">
+          <li><i class="fas fa-check-circle"></i> Direct reduction of local hunger</li>
+          <li><i class="fas fa-check-circle"></i> Restoration of natural biodiversity</li>
+          <li><i class="fas fa-check-circle"></i> Long-term environmental sustainability</li>
+        </ul>
+        <a href="join.html" class="btn-primary">Become a Tree Planter</a>
+      </div>
+      <div class="pillar-visual reveal-right">
+        <img src="../assets/images/tree_planting.png" alt="Tree Plantation Service" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section" id="wellness-coaching">
+  <div class="container">
+    <div class="pillar-layout">
+      <div class="pillar-visual reveal">
+        <img src="../assets/images/health_coaching.png" alt="Wellness Coaching Service" />
+      </div>
+      <div class="pillar-content reveal-right">
+        <div class="section-tag">Pillar II</div>
+        <h2>Holistic Wellness Coaching</h2>
+        <p>A healthy mind and body are the foundations of a thriving life. Our professional coaches provide guidance on nutrition, fitness, and mental wellness to help you stay resilient and energized.</p>
+        <ul class="pillar-benefits">
+          <li><i class="fas fa-check-circle"></i> Personalized fitness and health plans</li>
+          <li><i class="fas fa-check-circle"></i> Stress management & mental clarity</li>
+          <li><i class="fas fa-check-circle"></i> Community wellness workshops</li>
+        </ul>
+        <a href="join.html" class="btn-primary">Enroll in Wellness</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section" id="wealth-coaching">
+  <div class="container">
+    <div class="pillar-layout">
+      <div class="pillar-content reveal">
+        <div class="section-tag">Pillar III</div>
+        <h2>Empowering Wealth Coaching</h2>
+        <p>Financial freedom is the path to true self-reliance. We teach practical, life-changing financial skills that empower individuals to build and sustain wealth for their families.</p>
+        <ul class="pillar-benefits">
+          <li><i class="fas fa-check-circle"></i> Practical budgeting & saving strategies</li>
+          <li><i class="fas fa-check-circle"></i> Investment and assets education</li>
+          <li><i class="fas fa-check-circle"></i> Multi-generational wealth planning</li>
+        </ul>
+        <a href="join.html" class="btn-primary">Start Wealth Training</a>
+      </div>
+      <div class="pillar-visual reveal-right">
+        <img src="../assets/images/wealth_coaching.png" alt="Wealth Education Service" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="harmony-section">
+  <div class="container">
+    <div class="harmony-content reveal">
+      <h2>Working in Harmony</h2>
+      <p>True success isn't just about one thing. It's about how these three dimensions support each other. When people are nourished, healthy, and financially secure, they build legacies that last for generations.</p>
+      <div class="harmony-grid">
+        <div class="harmony-item reveal">
+          <i class="fas fa-seedling"></i>
+          <h4>Nourished Body</h4>
+          <p>Fresh fruit from our trees provides the vital energy needed for health and wealth creation.</p>
+        </div>
+        <div class="harmony-item reveal delay-1">
+          <i class="fas fa-shield-heart"></i>
+          <h4>Strong Mind</h4>
+          <p>Wellness coaching ensures you have the focus and resilience to manage your financial future.</p>
+        </div>
+        <div class="harmony-item reveal delay-2">
+          <i class="fas fa-vault"></i>
+          <h4>Financial Peace</h4>
+          <p>Wealth coaching provides the security that allows you to give back to the earth and your community.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-box reveal">
+      <div class="newsletter-content">
+        <h2>Ready to make an impact?</h2>
+        <p>Support our roots and help us grow a greener world. Every contribution plants a seed of change.</p>
+        <div class="hero-buttons" style="justify-content: center;">
+          <a href="donate.html" class="btn-gold-solid">Support Our Mission</a>
+          <a href="join.html" class="btn-secondary" style="border-color: white; color: white;">Join the Team</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2024 Grow Green Foundation. All rights reserved. Registered Non-Profit Trust.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+  // Simple Intersection Observer for scroll animations
+  const revealElements = document.querySelectorAll('.reveal, .reveal-right, .container-reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  revealElements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
