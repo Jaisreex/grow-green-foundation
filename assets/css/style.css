@@ -608,9 +608,10 @@ img { max-width: 100%; height: auto; display: block; }
   .map-counter-row { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .map-counter { border-right: none; }
   .newsletter-form { flex-direction: column; }
-  .form-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .form-full { grid-column: span 1; }
-  .form-card { padding: 2.5rem 1.5rem; }
+  .form-section .container { padding: 0 1rem; }
+  .form-card { padding: 2.5rem 1.25rem; margin-bottom: 4rem; }
   
   .footer-top { padding: 4rem 0; }
   .footer-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
@@ -618,6 +619,7 @@ img { max-width: 100%; height: auto; display: block; }
   .social-icons { justify-content: center; }
   .footer-contact p { justify-content: center; }
   .footer-logo img { height: 80px; }
+  .page-header { padding: 9rem 1.5rem 6rem; }
 }
 
 @media (max-width: 480px) {
