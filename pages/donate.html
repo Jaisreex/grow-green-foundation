@@ -91,52 +91,61 @@
         </div>
       </div>
       <div class="custom-amount form-group">
-        <label for="custom-amt">Or enter a custom amount (₹)</label>
-        <input type="number" id="custom-amt" placeholder="e.g. 1000" min="100" />
+        <label class="form-label" for="custom-amt">Or enter a custom amount (₹)</label>
+        <input type="number" id="custom-amt" class="form-input" placeholder="e.g. 1000" min="100" />
       </div>
-      <form id="donateForm" onsubmit="handleDonate(event)">
+      <form id="donateForm" onsubmit="handleDonate(event)" class="form-grid">
         <div class="form-group">
-          <label for="d-name">Full Name *</label>
-          <input type="text" id="d-name" placeholder="Your full name" required />
+          <label class="form-label" for="d-name">Full Name *</label>
+          <input type="text" id="d-name" class="form-input" placeholder="Your full name" required />
         </div>
         <div class="form-group">
-          <label for="d-email">Email Address *</label>
-          <input type="email" id="d-email" placeholder="your@email.com" required />
+          <label class="form-label" for="d-email">Email Address *</label>
+          <input type="email" id="d-email" class="form-input" placeholder="your@email.com" required />
         </div>
         <div class="form-group">
-          <label for="d-phone">Phone Number</label>
-          <input type="tel" id="d-phone" placeholder="+91 99999 99999" />
+          <label class="form-label" for="d-phone">Phone Number</label>
+          <input type="tel" id="d-phone" class="form-input" placeholder="+91 99999 99999" />
         </div>
         <div class="form-group">
-          <label for="d-purpose">Donation Purpose</label>
-          <select id="d-purpose">
+          <label class="form-label" for="d-purpose">Donation Purpose</label>
+          <select id="d-purpose" class="form-input">
             <option>Tree Planting Mission</option>
             <option>Health Coaching Programs</option>
             <option>Wealth Education Programs</option>
             <option>General Fund — Where Needed Most</option>
           </select>
         </div>
-        <div class="form-group">
-          <label for="d-msg">Message (Optional)</label>
-          <textarea id="d-msg" placeholder="Share your reason for donating..."></textarea>
+        <div class="form-group form-full">
+          <label class="form-label" for="d-msg">Message (Optional)</label>
+          <textarea id="d-msg" class="form-input" style="min-height:120px;" placeholder="Share your reason for donating..."></textarea>
         </div>
-        <button type="submit" class="btn-gold-solid form-submit">
-          <i class="fas fa-lock"></i> Donate Securely Now
-        </button>
-        <p style="text-align:center;margin-top:.75rem;font-size:.82rem;color:var(--text-light);">
-          <i class="fas fa-shield-alt"></i> SSL Secured · Tax deductible under Section 80G
-        </p>
+        <div class="form-full">
+          <button type="submit" class="btn-gold-solid form-submit">
+            <i class="fas fa-lock"></i> Donate Securely Now
+          </button>
+          <p style="text-align:center;margin-top:1.5rem;font-size:.85rem;color:var(--text-light);display:flex;align-items:center;justify-content:center;gap:.5rem;">
+            <i class="fas fa-shield-alt" style="color:var(--green);"></i> SSL Secured · Tax deductible under Section 80G
+          </p>
+        </div>
       </form>
-      <div class="form-success" id="donateSuccess">
-        <i class="fas fa-heart"></i>
-        Thank you for your generous donation! A confirmation email has been sent to you. Together, we're growing a greener world. 🌿
+      <div class="form-success" id="donateSuccess" style="text-align:center;padding:3rem 0;display:none;">
+        <i class="fas fa-heart" style="font-size:3rem;color:var(--green);margin-bottom:1.5rem;display:block;"></i>
+        <h3 style="font-size:1.5rem;margin-bottom:1rem;">Thank You for Your Generosity!</h3>
+        <p style="color:var(--text-light);max-width:500px;margin:0 auto;line-height:1.6;">
+          A confirmation email has been sent to you. Your support directly helps us grow a greener, healthier world. 🌿
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<footer style="background:var(--dark);padding:2rem;text-align:center;color:rgba(255,255,255,.5);font-size:.85rem;">
-  &copy; 2026 Grow Green Foundation · <a href="../pages/privacy.html" style="color:rgba(255,255,255,.5)">Privacy Policy</a>
+<footer class="footer">
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 Grow Green Foundation. All rights reserved. Registered Non-Profit Trust.</p>
+    </div>
+  </div>
 </footer>
 
 <script src="../assets/js/main.js"></script>

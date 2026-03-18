@@ -537,15 +537,17 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: var(--shadow-lg); transition: var(--transition); margin-top: -3rem;
   position: relative; z-index: 10; margin-bottom: 8rem;
 }
-.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; }
-.form-group { display: flex; flex-direction: column; gap: .5rem; text-align: left; }
-.form-label { font-size: .9rem; font-weight: 700; color: var(--dark); }
+.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem; }
+.form-group { display: flex; flex-direction: column; gap: .75rem; text-align: left; }
+.form-label { font-size: .95rem; font-weight: 700; color: var(--dark); }
 .form-input { 
-  padding: 1rem 1.25rem; border: 2px solid #e2e8f0; border-radius: var(--radius-sm);
+  padding: 1.1rem 1.4rem; border: 2px solid #cbd5e0; border-radius: var(--radius-sm);
   font-family: inherit; transition: var(--transition); outline: none;
+  font-size: 1rem; color: var(--text); background: #fdfdfd;
 }
-.form-input:focus { border-color: var(--green); }
+.form-input:focus { border-color: var(--green); background: white; box-shadow: 0 0 0 4px rgba(45,90,39,0.1); }
 .form-full { grid-column: span 2; }
+.form-submit { width: 100%; padding: 1.2rem; font-size: 1.1rem; margin-top: 1rem; justify-content: center; }
 
 /* ---------- RESPONSIVE ADJUSTMENTS ---------- */
 @media (max-width: 1024px) {
