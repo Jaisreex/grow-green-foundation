@@ -128,7 +128,6 @@ img { max-width: 100%; height: auto; display: block; }
   width: auto;
   object-fit: contain;
   transition: var(--transition);
-  mix-blend-mode: multiply; /* Helps remove white backgrounds from JPG logos */
 }
 .navbar.scrolled .logo-img-main { height: 85px; }
 
