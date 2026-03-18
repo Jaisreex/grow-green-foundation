@@ -298,7 +298,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- VISION & MISSION ---------- */
 .vision-mission {
-  padding: 8rem 0;
+  padding: 4rem 0;
   background: var(--white);
 }
 
@@ -353,7 +353,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ---------- STORY SECTION ---------- */
-.story-section { padding: 10rem 0; overflow: hidden; }
+.story-section { padding: 4rem 0; overflow: hidden; }
 .story-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 6rem; align-items: center; }
 .story-image-wrap { position: relative; }
 .story-img { border-radius: var(--radius); box-shadow: var(--shadow-lg); transition: var(--transition); }
@@ -372,7 +372,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- PILLARS SECTION ---------- */
 .pillars-section { 
-  padding: 10rem 0; 
+  padding: 4rem 0; 
   background: linear-gradient(180deg, var(--white) 0%, var(--bg-soft) 100%);
 }
 .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
@@ -406,7 +406,7 @@ img { max-width: 100%; height: auto; display: block; }
 .pillar-card-featured::before { content: 'Most Impactful'; position: absolute; top: 1.5rem; right: 1.5rem; background: var(--green); color: var(--white); padding: .3rem .9rem; border-radius: 50px; font-size: .7rem; font-weight: 800; text-transform: uppercase; z-index: 5; }
 
 /* ---------- IMPACT MAP ---------- */
-.map-section { padding: 10rem 0; }
+.map-section { padding: 4rem 0; }
 .map-counter-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 4rem; text-align: center; }
 .map-counter { display: flex; flex-direction: column; gap: .5rem; border-right: 1px solid rgba(0,0,0,0.05); }
 .map-counter:last-child { border-right: none; }
@@ -419,7 +419,7 @@ img { max-width: 100%; height: auto; display: block; }
 .map-pin-info i { color: var(--green); }
 
 /* ---------- WHY SECTION ---------- */
-.why-section { padding: 10rem 0; background: var(--bg-soft); }
+.why-section { padding: 4rem 0; background: var(--bg-soft); }
 .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: stretch; }
 .why-stats { display: flex; flex-direction: column; gap: 2rem; }
 .stat-card {
@@ -445,7 +445,7 @@ img { max-width: 100%; height: auto; display: block; }
 .solution-item p { color: var(--text-light); }
 
 /* ---------- GALLERY SECTION ---------- */
-.gallery-section { padding: 10rem 0; }
+.gallery-section { padding: 4rem 0; }
 .gallery-masonry { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .gallery-item { position: relative; border-radius: var(--radius); overflow: hidden; cursor: pointer; }
 .gallery-item img { height: 100%; width: 100%; object-fit: cover; transition: var(--transition); }
@@ -460,7 +460,7 @@ img { max-width: 100%; height: auto; display: block; }
 .gallery-overlay span { color: var(--white); font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; }
 
 /* ---------- GET INVOLVED ---------- */
-.involve-section { padding: 10rem 0; background: #ffffff; color: var(--text); }
+.involve-section { padding: 4rem 0; background: #ffffff; color: var(--text); }
 .involve-section .section-title { color: var(--dark); }
 .involve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
 .involve-card {
