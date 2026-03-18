@@ -490,7 +490,13 @@ img { max-width: 100%; height: auto; display: block; }
   flex-grow: 1; padding: 1.1rem 1.8rem; border-radius: 50px; border: none;
   font-family: inherit; font-size: 1rem; outline: none;
 }
-.newsletter-note { margin-top: 3rem; font-size: .8rem; opacity: 0.6; }
+.newsletter-note { 
+  margin-top: 3rem; 
+  font-size: .85rem; 
+  opacity: 0.7; 
+  letter-spacing: 0.05em; 
+  word-spacing: 0.15em; 
+}
 
 /* ---------- FOOTER ---------- */
 .footer { background: var(--bg-soft); color: var(--text); border-top: 1px solid rgba(0,0,0,0.05); }
