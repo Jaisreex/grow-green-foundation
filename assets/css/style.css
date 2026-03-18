@@ -485,7 +485,7 @@ img { max-width: 100%; height: auto; display: block; }
 .newsletter-icon { font-size: 3rem; margin-bottom: 1.5rem; opacity: 0.9; }
 .newsletter-box h2 { font-size: 2.5rem; margin-bottom: 1rem; }
 .newsletter-box p { opacity: 0.8; max-width: 600px; margin: 0 auto 2.5rem; }
-.newsletter-form { max-width: 550px; margin: 0 auto; display: flex; gap: 1rem; }
+.newsletter-form { max-width: 550px; margin: 0 auto; display: flex; gap: 2rem; }
 .newsletter-form input {
   flex-grow: 1; padding: 1.1rem 1.8rem; border-radius: 50px; border: none;
   font-family: inherit; font-size: 1rem; outline: none;
