@@ -48,117 +48,195 @@
   </nav>
 
   <!-- ===== HERO SECTION ===== -->
+  <style>
+    /* HERO REDESIGN FOR LOGO ANIMATION */
+    .hero { background: linear-gradient(135deg, #f9fbf9 0%, #e8f5e9 100%) !important; }
+    .hero-bg, .hero-overlay { display: none !important; }
+    .hero-title { color: var(--green) !important; text-shadow: none !important; }
+    .hero-title-accent { color: var(--dark) !important; text-shadow: none !important; }
+    .hero-subtitle { color: var(--text) !important; text-shadow: none !important; }
+    .btn-secondary { color: var(--green) !important; border: 2px solid var(--green) !important; background: transparent !important; }
+    .btn-secondary:hover { background: var(--green) !important; color: white !important; }
+  </style>
   <section class="hero" id="home">
     <div class="hero-bg" style="background-image:url('assets/images/hero_background.png')"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content reveal">
       
-      <!-- ===== HERO SVG ANIMATION ===== -->
-      <svg viewBox="0 0 400 250" class="hero-animation-svg" aria-label="An animation of a boy planting and picking a fruit" role="img">
+      <!-- ===== LOGO ANIMATION SVG ===== -->
+      <svg viewBox="0 0 400 300" class="hero-animation-svg" aria-label="Animated GrowGreen Logo Scene" role="img">
         <style>
           .hero-animation-svg {
-            width: 100%; max-width: 320px; height: auto;
-            margin: 0 auto 1.5rem; display: block;
+            width: 100%; max-width: 450px; height: auto;
+            margin: 0 auto 1rem; display: block;
           }
-          .ground { stroke: rgba(255,255,255,0.15); stroke-width: 4; stroke-linecap: round; }
+          /* Colors to match logo */
+          .ground { fill: #228B22; }
+          .trunk { stroke: #5C4033; stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+          .leaf { fill: #2E7D32; }
+          .fruit { fill: #FFCA28; }
+          .silhouette { stroke: #111; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+          .silhouette-fill { fill: #111; }
+
+          /* Animations */
+          .tree-grow { transform-origin: 200px 250px; animation: tree-grow 6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+          .tree-pop { transform-origin: 200px 150px; animation: leaf-pop 6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+          .leaf-flutter { transform-origin: 200px 150px; animation: leaf-flutter 4s ease-in-out infinite alternate; }
           
-          .tree-group { transform-origin: 250px 200px; animation: tree-grow 6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
-          .trunk { stroke: var(--white); stroke-width: 12; stroke-linecap: round; opacity: 0.85; }
-          .canopy-part { fill: var(--green); opacity: 0.95; }
-          .canopy-part-light { fill: #4CAF50; opacity: 0.95; }
-          
-          .fruit { fill: var(--gold); transform-origin: center; animation: fruit-pop 6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+          .fruit-pop { transform-origin: 200px 150px; animation: fruit-pop 6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
           .fruit-drop-group { animation: fruit-drop 6s ease-in-out infinite; }
           
           .boy-group { animation: boy-walk 6s linear infinite; }
           .boy-bounce { animation: boy-bounce 6s cubic-bezier(0.3, 0, 0.7, 1) infinite; transform-origin: center; }
-          .boy-body { fill: rgba(255,255,255,0.9); }
-          .boy-head { fill: #f5cfb3; }
-          .boy-arm { stroke: rgba(255,255,255,0.9); stroke-width: 5; stroke-linecap: round; transform-origin: 140px 145px; animation: arm-reach 6s ease-in-out infinite; }
-          .boy-arm-back { stroke: rgba(255,255,255,0.6); stroke-width: 5; stroke-linecap: round; }
           
-          .idle-breathe { animation: idle-breathe 4s ease-in-out infinite alternate; transform-origin: center bottom; }
+          .leg-front { transform-origin: 146px 220px; animation: leg-front 6s linear infinite; }
+          .leg-back  { transform-origin: 142px 220px; animation: leg-back 6s linear infinite; }
+          .arm-reach { transform-origin: 145px 190px; animation: arm-reach 6s ease-in-out infinite; }
+          
+          .idle-breathe { animation: idle-breathe 5s ease-in-out infinite alternate; transform-origin: center bottom; }
 
           @keyframes tree-grow {
-            0%, 2% { transform: scale(0); opacity: 0; }
-            12% { transform: scale(1.02); opacity: 1; }
-            16%, 90% { transform: scale(1); opacity: 1; }
-            96%, 100% { transform: scale(0.6); opacity: 0; }
+            0%, 5% { transform: scale(0.1); opacity: 0; }
+            15% { transform: scale(1.02); opacity: 1; }
+            20%, 90% { transform: scale(1); opacity: 1; }
+            95%, 100% { transform: scale(0.1); opacity: 0; }
+          }
+          @keyframes leaf-pop {
+            0%, 15% { transform: scale(0); opacity: 0; }
+            22% { transform: scale(1.05); opacity: 1; }
+            26%, 90% { transform: scale(1); opacity: 1; }
+            95%, 100% { transform: scale(0); opacity: 0; }
+          }
+          @keyframes leaf-flutter {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(1.5deg); }
           }
           @keyframes fruit-pop {
-            0%, 14% { transform: scale(0); opacity: 0; }
-            22% { transform: scale(1.2); opacity: 1; }
+            0%, 18% { transform: scale(0); opacity: 0; }
+            24% { transform: scale(1.1); opacity: 1; }
             28%, 90% { transform: scale(1); opacity: 1; }
-            96%, 100% { transform: scale(0); opacity: 0; }
+            95%, 100% { transform: scale(0); opacity: 0; }
           }
           @keyframes boy-walk {
-            0%, 4% { transform: translate(-180px, 0); opacity: 0; }
-            8% { opacity: 1; }
-            32%, 90% { transform: translate(70px, 0); opacity: 1; }
-            94%, 100% { transform: translate(70px, 0); opacity: 0; }
+            0%, 8% { transform: translateX(-160px); opacity: 0; }
+            12% { opacity: 1; }
+            35%, 90% { transform: translateX(0px); opacity: 1; }
+            95%, 100% { transform: translateX(0px); opacity: 0; }
           }
           @keyframes boy-bounce {
             0% { transform: translateY(0); }
-            4% { transform: translateY(-4px); }
+            4% { transform: translateY(-3px); }
             8% { transform: translateY(0); }
-            12% { transform: translateY(-4px); }
+            12% { transform: translateY(-3px); }
             16% { transform: translateY(0); }
-            20% { transform: translateY(-4px); }
+            20% { transform: translateY(-3px); }
             24% { transform: translateY(0); }
-            28% { transform: translateY(-4px); }
+            28% { transform: translateY(-3px); }
             32%, 100% { transform: translateY(0); }
           }
+          @keyframes leg-front {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(25deg); }
+            15% { transform: rotate(-25deg); }
+            20% { transform: rotate(25deg); }
+            25% { transform: rotate(-25deg); }
+            30% { transform: rotate(25deg); }
+            35%, 100% { transform: rotate(0deg); }
+          }
+          @keyframes leg-back {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(-25deg); }
+            15% { transform: rotate(25deg); }
+            20% { transform: rotate(-25deg); }
+            25% { transform: rotate(25deg); }
+            30% { transform: rotate(-25deg); }
+            35%, 100% { transform: rotate(0deg); }
+          }
           @keyframes arm-reach {
-            0%, 32% { transform: rotate(0deg); }
-            38% { transform: rotate(-132deg); }
-            46%, 100% { transform: rotate(0deg); }
+            0%, 38% { transform: rotate(0deg); }
+            45% { transform: rotate(-142deg); }
+            52%, 100% { transform: rotate(0deg); }
           }
           @keyframes fruit-drop {
-            0%, 38% { transform: translate(0, 0); opacity: 1; }
-            46%, 90% { transform: translate(-15px, 45px); opacity: 1; }
-            94%, 100% { opacity: 0; }
+            0%, 45% { transform: translate(0, 0); opacity: 1; }
+            52%, 90% { transform: translate(-20px, 75px); opacity: 1; }
+            95%, 100% { opacity: 0; }
           }
           @keyframes idle-breathe {
-            0% { transform: scaleY(1) scaleX(1); }
-            100% { transform: scaleY(1.015) scaleX(1.005); }
+            0% { transform: scaleY(1); }
+            100% { transform: scaleY(1.015); }
           }
         </style>
 
+        <defs>
+          <path id="leaf-shape" d="M 0 0 C 15 -15 30 0 30 0 C 15 15 0 0 0 0 Z" class="leaf" />
+        </defs>
+
         <g class="idle-breathe">
-          <!-- Ground Line -->
-          <line x1="40" y1="200" x2="360" y2="200" class="ground" />
+          <!-- Ground -->
+          <ellipse cx="200" cy="255" rx="140" ry="12" class="ground" />
           
-          <!-- Tree -->
-          <g class="tree-group">
-            <line x1="250" y1="200" x2="250" y2="120" class="trunk" />
+          <!-- Tree Base -->
+          <g class="tree-grow">
+            <!-- Trunk Path -->
+            <!-- Base to split, then right branch, back up to left branch -->
+            <path d="M 197 252 
+                     Q 200 200 200 160 
+                     Q 215 140 230 125 
+                     M 200 160 
+                     Q 185 140 165 130" 
+                  class="trunk" />
             
-            <circle cx="215" cy="135" r="22" class="canopy-part-light" />
-            <circle cx="285" cy="135" r="22" class="canopy-part-light" />
-            <circle cx="230" cy="115" r="32" class="canopy-part" />
-            <circle cx="270" cy="115" r="32" class="canopy-part" />
-            <circle cx="250" cy="85" r="38" class="canopy-part" />
+            <!-- Trunk Flares to cover edges -->
+            <path d="M 190 252 Q 197 240 200 220 L 200 252 Z" fill="#5C4033" />
+            <path d="M 210 252 Q 203 240 200 220 L 200 252 Z" fill="#5C4033" />
             
-            <circle cx="228" cy="92" r="6" class="fruit" />
-            <circle cx="272" cy="102" r="6" class="fruit" />
-            <circle cx="252" cy="72" r="6" class="fruit" />
-            <circle cx="265" cy="128" r="6" class="fruit" />
-            <circle cx="210" cy="122" r="6" class="fruit" />
-            
-            <!-- Plucked Fruit -->
-            <g class="fruit-drop-group">
-              <circle cx="225" cy="125" r="6" class="fruit" />
+            <g class="tree-pop">
+              <g class="leaf-flutter">
+                <!-- Left Branch Leaves -->
+                <use href="#leaf-shape" transform="translate(165, 130) rotate(-45)" />
+                <use href="#leaf-shape" transform="translate(165, 130) rotate(-110)" />
+                <use href="#leaf-shape" transform="translate(165, 130) rotate(-170)" />
+                <use href="#leaf-shape" transform="translate(185, 140) rotate(-20)" />
+
+                <!-- Right Branch Leaves -->
+                <use href="#leaf-shape" transform="translate(230, 125) rotate(-15)" />
+                <use href="#leaf-shape" transform="translate(230, 125) rotate(-75)" />
+                <use href="#leaf-shape" transform="translate(230, 125) rotate(-135)" />
+                <use href="#leaf-shape" transform="translate(215, 140) rotate(-90)" />
+              </g>
+
+              <g class="fruit-pop">
+                <!-- Right Fruit (Static) -->
+                <circle cx="235" cy="140" r="9" class="fruit" />
+                
+                <!-- Left Fruit (Plucked) -->
+                <g class="fruit-drop-group">
+                  <circle cx="165" cy="155" r="9" class="fruit" />
+                </g>
+              </g>
             </g>
           </g>
           
-          <!-- Character -->
+          <!-- Silhouette Boy -->
           <g class="boy-group">
             <g class="boy-bounce">
-              <line x1="140" y1="145" x2="135" y2="170" class="boy-arm-back" />
-              <path d="M 134 150 Q 140 135 146 150 L 150 180 L 130 180 Z" class="boy-body" />
-              <circle cx="140" cy="125" r="11" class="boy-head" />
-              <line x1="135" y1="180" x2="135" y2="198" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round" />
-              <line x1="145" y1="180" x2="145" y2="198" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round" />
-              <line x1="140" y1="145" x2="140" y2="170" class="boy-arm" />
+              <!-- Back Arm -->
+              <line x1="145" y1="190" x2="135" y2="230" class="silhouette" />
+              <!-- Back Leg -->
+              <line x1="142" y1="220" x2="135" y2="252" class="silhouette leg-back" />
+              
+              <!-- Torso / Torso Body -->
+              <path d="M 141 182 C 148 182 150 195 150 215 L 142 225 C 138 210 138 195 141 182 Z" class="silhouette-fill" />
+              
+              <!-- Head -->
+              <circle cx="145" cy="168" r="11" class="silhouette-fill" />
+              
+              <!-- Front Leg -->
+              <line x1="146" y1="220" x2="152" y2="252" class="silhouette leg-front" />
+              
+              <!-- Reaching Front Arm -->
+              <line x1="145" y1="190" x2="145" y2="230" class="silhouette arm-reach" />
             </g>
           </g>
         </g>
