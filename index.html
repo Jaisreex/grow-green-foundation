@@ -52,6 +52,117 @@
     <div class="hero-bg" style="background-image:url('assets/images/hero_background.png')"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content reveal">
+      
+      <!-- ===== HERO SVG ANIMATION ===== -->
+      <svg viewBox="0 0 400 250" class="hero-animation-svg" aria-label="An animation of a boy planting and picking a fruit" role="img">
+        <style>
+          .hero-animation-svg {
+            width: 100%; max-width: 320px; height: auto;
+            margin: 0 auto 1.5rem; display: block;
+          }
+          .ground { stroke: rgba(255,255,255,0.15); stroke-width: 4; stroke-linecap: round; }
+          
+          .tree-group { transform-origin: 250px 200px; animation: tree-grow 6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+          .trunk { stroke: var(--white); stroke-width: 12; stroke-linecap: round; opacity: 0.85; }
+          .canopy-part { fill: var(--green); opacity: 0.95; }
+          .canopy-part-light { fill: #4CAF50; opacity: 0.95; }
+          
+          .fruit { fill: var(--gold); transform-origin: center; animation: fruit-pop 6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+          .fruit-drop-group { animation: fruit-drop 6s ease-in-out infinite; }
+          
+          .boy-group { animation: boy-walk 6s linear infinite; }
+          .boy-bounce { animation: boy-bounce 6s cubic-bezier(0.3, 0, 0.7, 1) infinite; transform-origin: center; }
+          .boy-body { fill: rgba(255,255,255,0.9); }
+          .boy-head { fill: #f5cfb3; }
+          .boy-arm { stroke: rgba(255,255,255,0.9); stroke-width: 5; stroke-linecap: round; transform-origin: 140px 145px; animation: arm-reach 6s ease-in-out infinite; }
+          .boy-arm-back { stroke: rgba(255,255,255,0.6); stroke-width: 5; stroke-linecap: round; }
+          
+          .idle-breathe { animation: idle-breathe 4s ease-in-out infinite alternate; transform-origin: center bottom; }
+
+          @keyframes tree-grow {
+            0%, 2% { transform: scale(0); opacity: 0; }
+            12% { transform: scale(1.02); opacity: 1; }
+            16%, 90% { transform: scale(1); opacity: 1; }
+            96%, 100% { transform: scale(0.6); opacity: 0; }
+          }
+          @keyframes fruit-pop {
+            0%, 14% { transform: scale(0); opacity: 0; }
+            22% { transform: scale(1.2); opacity: 1; }
+            28%, 90% { transform: scale(1); opacity: 1; }
+            96%, 100% { transform: scale(0); opacity: 0; }
+          }
+          @keyframes boy-walk {
+            0%, 4% { transform: translate(-180px, 0); opacity: 0; }
+            8% { opacity: 1; }
+            32%, 90% { transform: translate(70px, 0); opacity: 1; }
+            94%, 100% { transform: translate(70px, 0); opacity: 0; }
+          }
+          @keyframes boy-bounce {
+            0% { transform: translateY(0); }
+            4% { transform: translateY(-4px); }
+            8% { transform: translateY(0); }
+            12% { transform: translateY(-4px); }
+            16% { transform: translateY(0); }
+            20% { transform: translateY(-4px); }
+            24% { transform: translateY(0); }
+            28% { transform: translateY(-4px); }
+            32%, 100% { transform: translateY(0); }
+          }
+          @keyframes arm-reach {
+            0%, 32% { transform: rotate(0deg); }
+            38% { transform: rotate(-132deg); }
+            46%, 100% { transform: rotate(0deg); }
+          }
+          @keyframes fruit-drop {
+            0%, 38% { transform: translate(0, 0); opacity: 1; }
+            46%, 90% { transform: translate(-15px, 45px); opacity: 1; }
+            94%, 100% { opacity: 0; }
+          }
+          @keyframes idle-breathe {
+            0% { transform: scaleY(1) scaleX(1); }
+            100% { transform: scaleY(1.015) scaleX(1.005); }
+          }
+        </style>
+
+        <g class="idle-breathe">
+          <!-- Ground Line -->
+          <line x1="40" y1="200" x2="360" y2="200" class="ground" />
+          
+          <!-- Tree -->
+          <g class="tree-group">
+            <line x1="250" y1="200" x2="250" y2="120" class="trunk" />
+            
+            <circle cx="215" cy="135" r="22" class="canopy-part-light" />
+            <circle cx="285" cy="135" r="22" class="canopy-part-light" />
+            <circle cx="230" cy="115" r="32" class="canopy-part" />
+            <circle cx="270" cy="115" r="32" class="canopy-part" />
+            <circle cx="250" cy="85" r="38" class="canopy-part" />
+            
+            <circle cx="228" cy="92" r="6" class="fruit" />
+            <circle cx="272" cy="102" r="6" class="fruit" />
+            <circle cx="252" cy="72" r="6" class="fruit" />
+            <circle cx="265" cy="128" r="6" class="fruit" />
+            <circle cx="210" cy="122" r="6" class="fruit" />
+            
+            <!-- Plucked Fruit -->
+            <g class="fruit-drop-group">
+              <circle cx="225" cy="125" r="6" class="fruit" />
+            </g>
+          </g>
+          
+          <!-- Character -->
+          <g class="boy-group">
+            <g class="boy-bounce">
+              <line x1="140" y1="145" x2="135" y2="170" class="boy-arm-back" />
+              <path d="M 134 150 Q 140 135 146 150 L 150 180 L 130 180 Z" class="boy-body" />
+              <circle cx="140" cy="125" r="11" class="boy-head" />
+              <line x1="135" y1="180" x2="135" y2="198" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round" />
+              <line x1="145" y1="180" x2="145" y2="198" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round" />
+              <line x1="140" y1="145" x2="140" y2="170" class="boy-arm" />
+            </g>
+          </g>
+        </g>
+      </svg>
       <h1 class="hero-title">
         Growing Fruit.<br />
         <span class="hero-title-accent">Reaping Futures.</span>
@@ -61,6 +172,38 @@
         <a href="pages/donate.html" class="btn-primary">Donate</a>
         <a href="pages/join.html" class="btn-primary">Volunteer</a>
         <a href="pages/contact.html" class="btn-primary">Partner With Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT WE DO ===== -->
+  <section class="vision-mission" id="what-we-do" style="padding: 4rem 0; background: #f9f9f9;">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+        <div class="section-tag">Summary</div>
+        <h2 class="section-title">What We <span class="text-green">Do</span></h2>
+      </div>
+      <div class="vision-mission-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div class="vision-card reveal">
+          <div class="card-icon"><i class="fas fa-tree"></i></div>
+          <h3>Tree Plantation</h3>
+          <p>Planting resilient fruit trees globally to eliminate hunger and capture carbon.</p>
+        </div>
+        <div class="mission-card reveal delay-1">
+          <div class="card-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Community Food Forests</h3>
+          <p>Transforming empty spaces into thriving, multi-layered natural food ecosystems.</p>
+        </div>
+        <div class="vision-card reveal delay-2">
+          <div class="card-icon"><i class="fas fa-coins"></i></div>
+          <h3>Wealth Education</h3>
+          <p>Teaching practical financial literacy and life-changing wealth-building habits.</p>
+        </div>
+        <div class="mission-card reveal delay-3">
+          <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+          <h3>Wellness & Health</h3>
+          <p>Providing essential guidance in physical fitness, nutrition, and mental health.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -78,6 +221,49 @@
           <div class="card-icon"><i class="fas fa-bullseye"></i></div>
           <h3>Our Mission</h3>
           <p>To plant fruit trees across the world to reduce hunger and restore ecosystems. To empower people through wealth education and wellness, creating a holistic path toward long-term sustainability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OUR VALUES ===== -->
+  <section class="involve-section" id="values" style="background:#fff; border-top: 1px solid #eee;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Guiding Principles</div>
+        <h2 class="section-title">Our Core <span class="text-green">Values</span></h2>
+        <p class="section-subtitle">The beliefs that drive our global mission forward every single day.</p>
+      </div>
+      <div class="involve-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="involve-card">
+          <div class="involve-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Sustainability</h3>
+          <p>We focus on regenerative, long-term solutions that directly nurture both people and the planet simultaneously.</p>
+        </div>
+        <div class="involve-card">
+          <div class="involve-icon"><i class="fas fa-users"></i></div>
+          <h3>Community Empowerment</h3>
+          <p>We actively build independent local communities that lead their own sustainable path to abundance.</p>
+        </div>
+        <div class="involve-card">
+          <div class="involve-icon"><i class="fas fa-eye"></i></div>
+          <h3>Transparency</h3>
+          <p>We operate with absolute honesty, clear accountability, and measurable impact tracking globally.</p>
+        </div>
+        <div class="involve-card">
+          <div class="involve-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Long-term Impact</h3>
+          <p>We fiercely invest in robust environmental systems and practical education that endure for generations.</p>
+        </div>
+        <div class="involve-card">
+          <div class="involve-icon"><i class="fas fa-book-open"></i></div>
+          <h3>Education & Awareness</h3>
+          <p>We believe accessible knowledge is the absolute truest foundation for ending systemic poverty.</p>
+        </div>
+        <div class="involve-card">
+          <div class="involve-icon"><i class="fas fa-heartbeat"></i></div>
+          <h3>Holistic Well-being</h3>
+          <p>We proactively address total human flourishing—balancing physical health, mental resilience, and environmental connection.</p>
         </div>
       </div>
     </div>
@@ -110,6 +296,11 @@
     </div>
   </section>
 
+    <style>
+      @media(min-width: 1024px) {
+        .pillars-grid.four-col-grid { grid-template-columns: repeat(4, 1fr) !important; }
+      }
+    </style>
     <section class="pillars-section" id="pillars">
     <div class="container">
       <div class="section-header">
@@ -117,7 +308,7 @@
         <h2 class="section-title">Growth · Health · Wealth</h2>
         <p class="section-subtitle">Four interconnected initiatives that together build abundant, self-sustaining communities.</p>
       </div>
-      <div class="pillars-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+      <div class="pillars-grid four-col-grid">
         
         <!-- Pillar 1 -->
         <div class="pillar-card reveal" id="tree-mission">
@@ -128,13 +319,13 @@
             <img src="assets/images/tree_planting.png" alt="Tree planting drive" loading="lazy" />
           </div>
           <div class="pillar-body">
-            <div class="pillar-tag">Initiative I</div>
+            <div class="pillar-tag">INITIATIVE I</div>
             <h3>Global Fruit Tree Plantation</h3>
-            <p>We plant fruit-bearing trees in villages, schools, community lands, farms, and urban spaces.</p>
+            <p>We plant fruit-bearing trees across public and agricultural spaces, creating continuous, accessible food sources and restoring nature.</p>
             <ul class="pillar-list">
               <li><i class="fas fa-check-circle"></i> free nutritious food</li>
-              <li><i class="fas fa-check-circle"></i> long-term ecological restoration</li>
-              <li><i class="fas fa-check-circle"></i> carbon capture</li>
+              <li><i class="fas fa-check-circle"></i> long-term restoration</li>
+              <li><i class="fas fa-check-circle"></i> natural carbon capture</li>
             </ul>
           </div>
         </div>
@@ -148,19 +339,19 @@
             <img src="assets/images/about_mission.png" alt="Community Food Forests" loading="lazy" />
           </div>
           <div class="pillar-body">
-            <div class="pillar-tag">Initiative II</div>
+            <div class="pillar-tag">INITIATIVE II</div>
             <h3>Community Food Forests</h3>
-            <p>We help communities create food forests — natural ecosystems of fruit trees, plants, and herbs.</p>
+            <p>We assist communities in developing lush food forests, mimicking natural ecosystems to provide diverse foods and regenerate local lands.</p>
             <ul class="pillar-list">
               <li><i class="fas fa-check-circle"></i> long-term food security</li>
-              <li><i class="fas fa-check-circle"></i> biodiversity restoration</li>
-              <li><i class="fas fa-check-circle"></i> climate resilience</li>
+              <li><i class="fas fa-check-circle"></i> thriving local biodiversity</li>
+              <li><i class="fas fa-check-circle"></i> strong climate resilience</li>
             </ul>
           </div>
         </div>
 
         <!-- Pillar 3 -->
-        <div class="pillar-card pillar-card-featured reveal delay-2" id="health-coaching">
+        <div class="pillar-card reveal delay-2" id="health-coaching">
           <div class="pillar-icon-wrap pillar-blue">
             <i class="fas fa-heartbeat"></i>
           </div>
@@ -168,13 +359,13 @@
             <img src="assets/images/health_coaching.png" alt="Health coaching session" loading="lazy" />
           </div>
           <div class="pillar-body">
-            <div class="pillar-tag">Initiative III</div>
+            <div class="pillar-tag">INITIATIVE III</div>
             <h3>Wellness & Healthy Living</h3>
-            <p>True prosperity includes physical and mental well-being. We promote healthy lifestyle practices.</p>
+            <p>True prosperity requires vibrant physical and mental well-being. We promote essential lifestyle practices to foster holistic health.</p>
             <ul class="pillar-list">
-              <li><i class="fas fa-check-circle"></i> nutrition awareness</li>
-              <li><i class="fas fa-check-circle"></i> mindfulness and stress management</li>
-              <li><i class="fas fa-check-circle"></i> community health programs</li>
+              <li><i class="fas fa-check-circle"></i> daily nutrition awareness</li>
+              <li><i class="fas fa-check-circle"></i> proactive stress relief</li>
+              <li><i class="fas fa-check-circle"></i> local health programs</li>
             </ul>
           </div>
         </div>
@@ -188,13 +379,13 @@
             <img src="assets/images/wealth_coaching.png" alt="Wealth coaching workshop" loading="lazy" />
           </div>
           <div class="pillar-body">
-            <div class="pillar-tag">Initiative IV</div>
+            <div class="pillar-tag">INITIATIVE IV</div>
             <h3>Wealth Education</h3>
-            <p>Financial knowledge is essential for sustainable progress. We believe financial education breaks cycles of poverty.</p>
+            <p>Financial knowledge is essential for sustainable progress. We equip individuals with practical wealth skills to confidently break poverty.</p>
             <ul class="pillar-list">
-              <li><i class="fas fa-check-circle"></i> saving and investing</li>
-              <li><i class="fas fa-check-circle"></i> entrepreneurship</li>
-              <li><i class="fas fa-check-circle"></i> responsible decision-making</li>
+              <li><i class="fas fa-check-circle"></i> smart saving strategies</li>
+              <li><i class="fas fa-check-circle"></i> active entrepreneurship skills</li>
+              <li><i class="fas fa-check-circle"></i> wise financial decisions</li>
             </ul>
           </div>
         </div>
