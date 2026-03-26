@@ -48,7 +48,7 @@
 
   <!-- ===== HERO SECTION ===== -->
   <style>
-    /* HERO STYLES (REINSTATED BACKGROUND IMAGE) */
+    /* HERO STYLES (REINSTATED BACKGROUND IMAGE & ANIMATION) */
     .hero { 
       padding: 120px 0 80px;
       min-height: 85vh;
@@ -68,7 +68,12 @@
       display: block !important;
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
       background: linear-gradient(to bottom, rgba(15, 18, 15, 0.7) 0%, rgba(15, 18, 15, 0.4) 100%);
-      z-index: 2;
+      z-index: 5;
+    }
+    .hero-video-bg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 3; display: flex; align-items: center; justify-content: center;
+      pointer-events: none;
     }
     .hero-content { z-index: 10; position: relative; }
     .hero-title { 
@@ -96,14 +101,14 @@
   <section class="hero" id="home">
     <div class="hero-bg" style="background-image:url('assets/images/hero_background.png')"></div>
     <div class="hero-overlay"></div>
-    <div class="hero-content reveal">
-      
-      <!-- ===== LOGO ANIMATION SVG ===== -->
-      <svg viewBox="0 0 400 300" class="hero-animation-svg" aria-label="Animated GrowGreen Logo Scene" role="img">
+    
+    <!-- ===== ANIMATED BACKGROUND SVG ===== -->
+    <div class="hero-video-bg">
+      <svg viewBox="0 0 400 300" class="hero-bg-animation" aria-label="Animated Background" role="img">
         <style>
-          .hero-animation-svg {
-            width: 100%; max-width: 450px; height: auto;
-            margin: 0 auto 1rem; display: block;
+          .hero-bg-animation {
+            width: 100%; height: 100%; object-fit: cover;
+            opacity: 0.8;
           }
           /* Colors to match logo */
           .ground { fill: #228B22; }
@@ -114,27 +119,27 @@
           .silhouette-fill { fill: #111; }
 
           /* Animations */
-          .tree-grow { transform-origin: 200px 250px; animation: tree-grow 6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+          .tree-grow { transform-origin: 200px 250px; animation: tree-grow-tall 6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
           .tree-pop { transform-origin: 200px 150px; animation: leaf-pop 6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
           .leaf-flutter { transform-origin: 200px 150px; animation: leaf-flutter 4s ease-in-out infinite alternate; }
           
           .fruit-pop { transform-origin: 200px 150px; animation: fruit-pop 6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
-          .fruit-drop-group { animation: fruit-drop 6s ease-in-out infinite; }
+          .fruit-drop-group { animation: fruit-drop-tall 6s ease-in-out infinite; }
           
           .boy-group { animation: boy-walk 6s linear infinite; }
           .boy-bounce { animation: boy-bounce 6s cubic-bezier(0.3, 0, 0.7, 1) infinite; transform-origin: center; }
           
           .leg-front { transform-origin: 146px 220px; animation: leg-front 6s linear infinite; }
           .leg-back  { transform-origin: 142px 220px; animation: leg-back 6s linear infinite; }
-          .arm-reach { transform-origin: 145px 190px; animation: arm-reach 6s ease-in-out infinite; }
+          .arm-reach { transform-origin: 145px 190px; animation: arm-reach-tall 6s ease-in-out infinite; }
           
           .idle-breathe { animation: idle-breathe 5s ease-in-out infinite alternate; transform-origin: center bottom; }
 
-          @keyframes tree-grow {
-            0%, 5% { transform: scale(0.1); opacity: 0; }
-            15% { transform: scale(1.02); opacity: 1; }
-            20%, 90% { transform: scale(1); opacity: 1; }
-            95%, 100% { transform: scale(0.1); opacity: 0; }
+          @keyframes tree-grow-tall {
+            0%, 5% { transform: scale(0.1, 0.1); opacity: 0; }
+            15% { transform: scale(1.02, 1.25); opacity: 1; }
+            20%, 90% { transform: scale(1, 1.2); opacity: 1; }
+            95%, 100% { transform: scale(0.1, 0.1); opacity: 0; }
           }
           @keyframes leaf-pop {
             0%, 15% { transform: scale(0); opacity: 0; }
@@ -187,14 +192,14 @@
             30% { transform: rotate(-25deg); }
             35%, 100% { transform: rotate(0deg); }
           }
-          @keyframes arm-reach {
+          @keyframes arm-reach-tall {
             0%, 38% { transform: rotate(0deg); }
-            45% { transform: rotate(-142deg); }
+            45% { transform: rotate(-155deg); }
             52%, 100% { transform: rotate(0deg); }
           }
-          @keyframes fruit-drop {
+          @keyframes fruit-drop-tall {
             0%, 45% { transform: translate(0, 0); opacity: 1; }
-            52%, 90% { transform: translate(-20px, 75px); opacity: 1; }
+            52%, 90% { transform: translate(-20px, 95px); opacity: 1; }
             95%, 100% { opacity: 0; }
           }
           @keyframes idle-breathe {
@@ -214,7 +219,6 @@
           <!-- Tree Base -->
           <g class="tree-grow">
             <!-- Trunk Path -->
-            <!-- Base to split, then right branch, back up to left branch -->
             <path d="M 197 252 
                      Q 200 200 200 160 
                      Q 215 140 230 125 
@@ -222,19 +226,16 @@
                      Q 185 140 165 130" 
                   class="trunk" />
             
-            <!-- Trunk Flares to cover edges -->
             <path d="M 190 252 Q 197 240 200 220 L 200 252 Z" fill="#5C4033" />
             <path d="M 210 252 Q 203 240 200 220 L 200 252 Z" fill="#5C4033" />
             
             <g class="tree-pop">
               <g class="leaf-flutter">
-                <!-- Left Branch Leaves -->
                 <use href="#leaf-shape" transform="translate(165, 130) rotate(-45)" />
                 <use href="#leaf-shape" transform="translate(165, 130) rotate(-110)" />
                 <use href="#leaf-shape" transform="translate(165, 130) rotate(-170)" />
                 <use href="#leaf-shape" transform="translate(185, 140) rotate(-20)" />
 
-                <!-- Right Branch Leaves -->
                 <use href="#leaf-shape" transform="translate(230, 125) rotate(-15)" />
                 <use href="#leaf-shape" transform="translate(230, 125) rotate(-75)" />
                 <use href="#leaf-shape" transform="translate(230, 125) rotate(-135)" />
@@ -242,10 +243,7 @@
               </g>
 
               <g class="fruit-pop">
-                <!-- Right Fruit (Static) -->
                 <circle cx="235" cy="140" r="9" class="fruit" />
-                
-                <!-- Left Fruit (Plucked) -->
                 <g class="fruit-drop-group">
                   <circle cx="165" cy="155" r="9" class="fruit" />
                 </g>
@@ -253,29 +251,21 @@
             </g>
           </g>
           
-          <!-- Silhouette Boy -->
           <g class="boy-group">
             <g class="boy-bounce">
-              <!-- Back Arm -->
               <line x1="145" y1="190" x2="135" y2="230" class="silhouette" />
-              <!-- Back Leg -->
               <line x1="142" y1="220" x2="135" y2="252" class="silhouette leg-back" />
-              
-              <!-- Torso / Torso Body -->
               <path d="M 141 182 C 148 182 150 195 150 215 L 142 225 C 138 210 138 195 141 182 Z" class="silhouette-fill" />
-              
-              <!-- Head -->
               <circle cx="145" cy="168" r="11" class="silhouette-fill" />
-              
-              <!-- Front Leg -->
               <line x1="146" y1="220" x2="152" y2="252" class="silhouette leg-front" />
-              
-              <!-- Reaching Front Arm -->
               <line x1="145" y1="190" x2="145" y2="230" class="silhouette arm-reach" />
             </g>
           </g>
         </g>
       </svg>
+    </div>
+
+    <div class="hero-content reveal">
       <h1 class="hero-title">
         Growing Fruit.<br />
         <span class="hero-title-accent">Reaping Futures.</span>
