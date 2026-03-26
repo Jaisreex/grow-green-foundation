@@ -48,7 +48,7 @@
 
   <!-- ===== HERO SECTION ===== -->
   <style>
-    /* HERO STYLES (REINSTATED BACKGROUND IMAGE & ANIMATION) */
+    /* HERO STYLES (REINSTATED CENTERED ANIMATION) */
     .hero { 
       padding: 120px 0 80px;
       min-height: 85vh;
@@ -68,12 +68,7 @@
       display: block !important;
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
       background: linear-gradient(to bottom, rgba(15, 18, 15, 0.7) 0%, rgba(15, 18, 15, 0.4) 100%);
-      z-index: 5;
-    }
-    .hero-video-bg {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      z-index: 3; display: flex; align-items: center; justify-content: center;
-      pointer-events: none;
+      z-index: 2;
     }
     .hero-content { z-index: 10; position: relative; }
     .hero-title { 
@@ -97,19 +92,19 @@
       justify-content: center !important;
       gap: 1.5rem !important; 
     }
+    .hero-animation-svg {
+      width: 100%; max-width: 450px; height: auto;
+      margin: 0 auto 1rem; display: block;
+    }
   </style>
   <section class="hero" id="home">
     <div class="hero-bg" style="background-image:url('assets/images/hero_background.png')"></div>
     <div class="hero-overlay"></div>
-    
-    <!-- ===== ANIMATED BACKGROUND SVG ===== -->
-    <div class="hero-video-bg">
-      <svg viewBox="0 0 400 300" class="hero-bg-animation" aria-label="Animated Background" role="img">
+    <div class="hero-content reveal">
+      
+      <!-- ===== LOGO ANIMATION SVG (TALLER) ===== -->
+      <svg viewBox="0 0 400 300" class="hero-animation-svg" aria-label="Animated GrowGreen Logo Scene" role="img">
         <style>
-          .hero-bg-animation {
-            width: 100%; height: 100%; object-fit: cover;
-            opacity: 0.8;
-          }
           /* Colors to match logo */
           .ground { fill: #228B22; }
           .trunk { stroke: #5C4033; stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; fill: none; }
@@ -138,7 +133,7 @@
           @keyframes tree-grow-tall {
             0%, 5% { transform: scale(0.1, 0.1); opacity: 0; }
             15% { transform: scale(1.02, 1.25); opacity: 1; }
-            20%, 90% { transform: scale(1, 1.2); opacity: 1; }
+            20%, 90% { transform: scale(1, 1.25); opacity: 1; }
             95%, 100% { transform: scale(0.1, 0.1); opacity: 0; }
           }
           @keyframes leaf-pop {
