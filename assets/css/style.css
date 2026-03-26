@@ -369,13 +369,18 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
 .pillar-card {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #ffffff;
+  border: 2px solid rgba(45, 90, 39, 0.1);
   border-radius: var(--radius); overflow: hidden;
-  box-shadow: var(--shadow); transition: var(--transition); display: flex; flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+  transition: var(--transition); 
+  display: flex; flex-direction: column;
 }
-.pillar-card:hover { transform: translateY(-12px); box-shadow: var(--shadow-lg); background: white; }
+.pillar-card:hover { 
+  transform: translateY(-12px); 
+  box-shadow: 0 20px 40px rgba(45, 90, 39, 0.15); 
+  border-color: var(--green);
+}
 .pillar-icon-wrap {
   width: 70px; height: 70px; border-radius: 50px;
   display: grid; place-items: center; font-size: 1.7rem;
