@@ -112,7 +112,7 @@ img { max-width: 100%; height: auto; display: block; }
   max-width: 1400px; margin: 0 auto;
   padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -580,6 +580,7 @@ img { max-width: 100%; height: auto; display: block; }
   .btn-donate-nav { display: none; } /* Hide in navbar on small screens, user menu should contain it or it stays in top */
   .nav-links .btn-donate-nav { display: block; margin-top: 1rem; }
   
+  .nav-container { justify-content: flex-end; }
   .logo-img-main { height: 140px; }
   .navbar.scrolled .logo-img-main { height: 90px; }
 }
