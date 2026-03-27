@@ -109,11 +109,12 @@ img { max-width: 100%; height: auto; display: block; }
 .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.08); }
 
 .nav-container {
-  max-width: 1600px; margin: 0 auto;
+  max-width: 1700px; margin: 0 auto;
   padding: 0 4rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 5rem;
 }
 
 .nav-brand {
@@ -146,17 +147,15 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-wrapper-right {
   display: flex;
   align-items: center;
-  gap: 3rem;
   flex-grow: 1;
-  justify-content: flex-end;
 }
 
 .nav-links {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
-  gap: 2.5rem;
+  justify-content: flex-start;
+  gap: 2rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -682,7 +681,7 @@ img { max-width: 100%; height: auto; display: block; }
   .btn-donate-nav { display: none; }
 
   
-  .nav-container { justify-content: flex-end; }
+  .nav-container { justify-content: space-between; gap: 0; }
   .logo-img-main { height: 140px; }
   .navbar.scrolled .logo-img-main { height: 90px; }
 }
