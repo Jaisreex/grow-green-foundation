@@ -180,25 +180,92 @@ img { max-width: 100%; height: auto; display: block; }
 
 .nav-link:hover::after { width: 100%; }
 
-.btn-donate-nav {
-  background: var(--green);
-  color: var(--white);
-  padding: 0.6rem 1.6rem;
-  border-radius: 50px;
-  font-weight: 800;
-  font-size: 0.85rem;
+/* --- Dropdown Menu --- */
+.nav-item-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropdown-arrow {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-item-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--white);
+  min-width: 220px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  padding: 1rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border: 1px solid rgba(45,90,39,0.1);
+  margin-top: 10px;
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--dark);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: var(--transition);
-  border: none;
-  box-shadow: 0 4px 15px rgba(45,90,39,0.2);
 }
+
+.dropdown-item:hover {
+  background: var(--green-pale);
+  color: var(--green);
+  padding-left: 2rem;
+}
+
+/* --- Refined Donate CTA --- */
+.btn-donate-nav {
+  background: var(--gold) !important;
+  color: var(--green-dark) !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 50px;
+  font-weight: 900 !important;
+  font-size: 0.95rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 5px 20px rgba(255, 208, 0, 0.3) !important;
+}
+
+.btn-donate-nav::after {
+  display: none !important;
+}
+
 .btn-donate-nav:hover {
-  background: var(--green-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(45,90,39,0.3);
-  color: var(--white);
+  background: var(--gold-dark) !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 8px 25px rgba(255, 208, 0, 0.4) !important;
 }
+
 
 .hamburger {
   display: none;
@@ -590,8 +657,31 @@ img { max-width: 100%; height: auto; display: block; }
   }
   .nav-links.open { display: flex; }
   .nav-link { font-size: 1.1rem; width: 100%; }
-  .btn-donate-nav { display: none; } /* Hide in navbar on small screens, user menu should contain it or it stays in top */
-  .nav-links .btn-donate-nav { display: block; margin-top: 1rem; }
+  
+  .nav-item-dropdown { width: 100%; }
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    border: none;
+    background: var(--green-pale);
+    margin-top: 1rem;
+    padding: 0;
+    display: none;
+  }
+  .nav-item-dropdown.open .dropdown-menu {
+    display: block;
+  }
+  .dropdown-item {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .btn-donate-nav { display: block; margin-top: 1rem; text-align: center; }
+  .nav-links .btn-donate-nav { display: block; margin: 2rem 0; width: 100%; }
+
   
   .nav-container { justify-content: flex-end; }
   .logo-img-main { height: 140px; }
