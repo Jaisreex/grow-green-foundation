@@ -109,8 +109,8 @@ img { max-width: 100%; height: auto; display: block; }
 .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.08); }
 
 .nav-container {
-  max-width: 1400px; margin: 0 auto;
-  padding: 0 2rem;
+  max-width: 1600px; margin: 0 auto;
+  padding: 0 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -146,25 +146,29 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-wrapper-right {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 3rem;
+  flex-grow: 1;
+  justify-content: flex-end;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .nav-link {
   font-family: var(--font-head);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: var(--dark);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   transition: var(--transition);
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .nav-link::after {
@@ -183,17 +187,16 @@ img { max-width: 100%; height: auto; display: block; }
 /* --- Dropdown Menu --- */
 .nav-item-dropdown {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-toggle {
-  display: flex !important;
-  align-items: center;
   gap: 0.5rem;
 }
 
 .dropdown-arrow {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   transition: transform 0.3s ease;
 }
 
@@ -204,19 +207,18 @@ img { max-width: 100%; height: auto; display: block; }
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
+  left: 0;
   background: var(--white);
-  min-width: 220px;
+  min-width: 200px;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-lg);
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
   z-index: 1000;
-  border: 1px solid rgba(45,90,39,0.1);
-  margin-top: 10px;
+  border: 1px solid rgba(0,0,0,0.05);
+  margin-top: 15px;
 }
 
 .nav-item-dropdown:hover .dropdown-menu {
