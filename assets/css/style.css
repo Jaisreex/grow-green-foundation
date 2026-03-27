@@ -366,24 +366,25 @@ img { max-width: 100%; height: auto; display: block; }
 .btn-donate-hero {
   display: inline-flex;
   align-items: center;
-  background: var(--gold);
-  color: var(--green-dark);
+  background: linear-gradient(45deg, #FFD000, #FF8C00); /* Attractive Gold-to-Orange */
+  color: var(--white);
   padding: 1.2rem 3.5rem;
   border-radius: 50px;
   font-weight: 900;
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  box-shadow: 0 10px 25px rgba(255, 208, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(255, 140, 0, 0.4);
   transition: var(--transition);
   border: none;
   cursor: pointer;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .btn-donate-hero:hover {
-  background: var(--gold-dark);
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(255, 208, 0, 0.4);
+  background: linear-gradient(45deg, #FF8C00, #FFD000);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(255, 140, 0, 0.5);
 }
 
 .btn-secondary {
