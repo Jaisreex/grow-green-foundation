@@ -153,36 +153,33 @@ img { max-width: 100%; height: auto; display: block; }
 
 .nav-links {
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .nav-link {
   font-family: var(--font-head);
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--dark);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: var(--transition);
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   white-space: nowrap;
-}
-
-.nav-link::after {
-  content: ''; position: absolute; bottom: -8px; left: 0; width: 0; height: 3px;
-  background: var(--green); border-radius: 2px;
-  transition: var(--transition);
+  padding: 0.5rem 0;
 }
 
 .nav-link:hover { 
   color: var(--green); 
-  transform: translateY(-2px);
 }
-
-.nav-link:hover::after { width: 100%; }
 
 /* --- Dropdown Menu --- */
 .nav-item-dropdown {
@@ -192,7 +189,10 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .dropdown-toggle {
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 }
 
 .dropdown-arrow {
@@ -205,26 +205,22 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .dropdown-menu {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
   background: var(--white);
   min-width: 200px;
   border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-lg);
-  padding: 0.75rem 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 1rem 0;
   z-index: 1000;
   border: 1px solid rgba(0,0,0,0.05);
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .nav-item-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  display: block;
 }
 
 .dropdown-item {
@@ -237,7 +233,9 @@ img { max-width: 100%; height: auto; display: block; }
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: var(--transition);
+  text-align: left;
 }
+
 
 .dropdown-item:hover {
   background: var(--green-pale);
