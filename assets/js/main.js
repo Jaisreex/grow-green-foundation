@@ -126,13 +126,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Set Home as active by default if on home
+  // Set Stories (Gallery) as active by default if on home
   if (window.location.hash === '' || window.location.hash === '#home') {
-    const homeLink = document.querySelector('a[href="#home"]');
-    if (homeLink) homeLink.classList.add('active');
+    const storiesLink = document.querySelector('a[href="#gallery"]');
+    if (storiesLink) {
+        links.forEach(l => l.classList.remove('active'));
+        storiesLink.classList.add('active');
+    }
   } else {
     const activeLink = document.querySelector(`a[href="${window.location.hash}"]`);
-    if (activeLink) activeLink.classList.add('active');
+    if (activeLink) {
+        links.forEach(l => l.classList.remove('active'));
+        activeLink.classList.add('active');
+    }
   }
 });
 
