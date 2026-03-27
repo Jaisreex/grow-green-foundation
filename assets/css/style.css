@@ -153,8 +153,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .nav-links {
   display: flex;
-  flex-direction: row !important;
-  align-items: center !important;
+  flex-direction: row;
+  align-items: center;
   justify-content: flex-end;
   gap: 2.5rem;
   margin: 0;
@@ -679,8 +679,7 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 1rem;
   }
 
-  .btn-donate-nav { display: block; margin-top: 1rem; text-align: center; }
-  .nav-links .btn-donate-nav { display: block; margin: 2rem 0; width: 100%; }
+  .btn-donate-nav { display: none; }
 
   
   .nav-container { justify-content: flex-end; }
