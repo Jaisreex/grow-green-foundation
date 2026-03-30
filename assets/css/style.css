@@ -119,6 +119,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .nav-brand {
+  flex: 1; 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -145,20 +146,13 @@ img { max-width: 100%; height: auto; display: block; }
   display: block;
 }
 
-.nav-wrapper-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
 .nav-links {
+  flex: 2; 
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
-  gap: 2.5rem; /* Increased spacing between menu items */
+  gap: 2.5rem; 
   margin: 0;
   padding: 0;
   list-style: none;
@@ -166,10 +160,11 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .nav-actions {
+  flex: 1; 
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  flex: 0 0 auto;
-  margin-left: 1rem;
+  gap: 1.5rem;
 }
 
 @media (max-width: 1400px) {
