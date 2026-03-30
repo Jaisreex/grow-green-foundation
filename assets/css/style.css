@@ -773,7 +773,7 @@ img { max-width: 100%; height: auto; display: block; }
 .float-btn {
   position: fixed; 
   bottom: 2rem; 
-  left: 2rem; 
+  right: 2rem; 
   z-index: 900;
   background: var(--green); 
   color: var(--white); 
