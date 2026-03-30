@@ -772,7 +772,7 @@ img { max-width: 100%; height: auto; display: block; }
   z-index: 900;
   background: var(--green); 
   color: var(--white); 
-  padding: 0.8rem 1.2rem; /* Smaller */
+  padding: 0.8rem 1.2rem; 
   border-radius: 50px; 
   border: none; 
   cursor: pointer;
@@ -783,15 +783,8 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.8rem;
   box-shadow: var(--shadow); 
   transition: all 0.5s ease;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-}
-
-.float-btn.visible {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
 }
 
 .float-btn:hover { 

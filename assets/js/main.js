@@ -193,17 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---- Floating Button Visibility Logic ----
-  const floatBtn = document.getElementById('floatBtn');
-  if (floatBtn) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        floatBtn.classList.add('visible');
-      } else {
-        floatBtn.classList.remove('visible');
-      }
-    });
-  }
+
 });
 
 // ---- Newsletter Form Handler ----
