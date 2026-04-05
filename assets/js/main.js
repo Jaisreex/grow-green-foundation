@@ -49,29 +49,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle mobile dropdown toggle
     const dropdownToggle = document.getElementById('getInvolvedToggle');
-    const dropdownContainer = dropdownToggle.closest('.nav-item-dropdown');
-    
-    dropdownToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      dropdownContainer.classList.toggle('open');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!dropdownContainer.contains(e.target)) {
-        dropdownContainer.classList.remove('open');
-      }
-    });
-
-    // Close mobile menu when clicking a dropdown item
-    navLinks.querySelectorAll('.dropdown-item').forEach(item => {
-      item.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        dropdownContainer.classList.remove('open');
-        hamburger.querySelectorAll('span').forEach(s => s.style.cssText = '');
+    if (dropdownToggle) {
+      const dropdownContainer = dropdownToggle.closest('.nav-item-dropdown');
+      
+      dropdownToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdownContainer.classList.toggle('open');
       });
-    });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!dropdownContainer.contains(e.target)) {
+          dropdownContainer.classList.remove('open');
+        }
+      });
+
+      // Close mobile menu when clicking a dropdown item
+      navLinks.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          dropdownContainer.classList.remove('open');
+          hamburger.querySelectorAll('span').forEach(s => s.style.cssText = '');
+        });
+      });
+    }
   }
 
   // ---- Animated Counters (Impact Stats) ----
