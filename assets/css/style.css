@@ -811,15 +811,13 @@ img { max-width: 100%; height: auto; display: block; }
 .page-header p { color: var(--text-light); max-width: 600px; margin: 0 auto; }
 .join-hero {
   position: relative;
-  padding: 18rem 0 12rem;
+  padding: 18rem 0 8rem;
   text-align: center;
-  background-color: var(--green); /* Fallback */
   background-image: url('../assets/images/join_hero_bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: var(--white);
-  overflow: hidden;
 }
 
 .join-hero::before {
@@ -850,8 +848,31 @@ img { max-width: 100%; height: auto; display: block; }
 .join-hero p {
   color: rgba(255, 255, 255, 0.9);
   max-width: 800px;
-  margin: 0 auto;
   font-size: 1.2rem;
+}
+.featured-image-container {
+  margin-top: 4rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: var(--transition);
+}
+.featured-image-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 35px 70px rgba(0,0,0,0.4);
+}
+.featured-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.8s ease;
+}
+.featured-image-container:hover img {
+  transform: scale(1.05);
 }
 .form-card {
   background: var(--white); border-radius: var(--radius); padding: 4rem;
