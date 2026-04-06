@@ -813,11 +813,13 @@ img { max-width: 100%; height: auto; display: block; }
   position: relative;
   padding: 18rem 0 12rem;
   text-align: center;
+  background-color: var(--green); /* Fallback */
   background-image: url('../assets/images/join_hero_bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: var(--white);
+  overflow: hidden;
 }
 
 .join-hero::before {
