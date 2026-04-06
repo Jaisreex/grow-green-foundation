@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate | Grow Green Foundation</title>
+  <meta name="description" content="Support Grow Green Foundation by sponsoring fruit trees, wellness coaching and financial education for communities worldwide." />
+  <link rel="icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .donate-tiers { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-bottom: 3rem; }
+    .tier-card {
+      border: 2px solid #e2e8f0; border-radius: 16px; padding: 2rem; text-align: center;
+      cursor: pointer; transition: all .3s ease; background: white;
+    }
+    .tier-card:hover, .tier-card.selected { border-color: var(--green); background: var(--green-pale); }
+    .tier-card.selected .tier-amount { color: var(--green); }
+    .tier-icon { font-size: 2rem; margin-bottom: .5rem; }
+    .tier-amount { font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; color: var(--dark); margin-bottom: .25rem; }
+    .tier-label { font-size: .85rem; color: var(--text-light); font-weight: 600; }
+    .tier-desc  { font-size: .88rem; color: var(--text-light); margin-top: .5rem; }
+    .tier-desc  { font-size: .88rem; color: var(--text-light); margin-top: .5rem; }
+    .custom-amount { margin-top: 1rem; }
+    @media(max-width:768px){ 
+      .donate-tiers{grid-template-columns:1fr 1fr;} 
+      .impact-summary-grid { grid-template-columns: 1fr !important; }
+    }
+    @media(max-width:480px){ .donate-tiers{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <!-- Logo Left -->
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/logo.png" alt="Grow Green Foundation Logo" class="logo-img-main" />
+      </a>
+
+      <!-- Menu Center -->
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Our Initiative</a>
+        <a href="../index.html#impact-map" class="nav-link">Impact</a>
+        <a href="join.html" class="nav-link">Get Involved</a>
+        <a href="../index.html#faq" class="nav-link">FAQ</a>
+      </div>
+
+      <!-- Actions Right -->
+      <div class="nav-actions">
+        <a href="donate.html" class="btn-donate-nav active">🌱 Plant a Tree</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+</nav>
+
+<div class="page-header">
+  <h1><i class="fas fa-seedling"></i> Make a Donation</h1>
+  <p>Every rupee plants the seeds of abundance for communities in need.</p>
+</div>
+
+<section class="form-section">
+  <div class="container">
+    <div class="form-card" style="margin-top: -6rem;">
+      <div style="text-align:center;margin-bottom:3rem;">
+        <h2 style="font-family:var(--font-head);font-size:2rem;color:var(--dark);margin-bottom:.5rem;">Choose Your Impact</h2>
+        <p style="color:var(--text-light);">Select a tier or enter your own amount to get started.</p>
+      </div>
+      
+      <div class="impact-summary-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;">
+        <div style="background:var(--bg-soft);padding:1.5rem;border-radius:12px;display:flex;align-items:center;gap:1rem;">
+          <i class="fas fa-tree" style="font-size:1.5rem;color:var(--green);"></i>
+          <div>
+            <div style="font-weight:800;color:var(--dark);font-size:1.1rem;">₹500</div>
+            <div style="font-size:.85rem;color:var(--text-light);">Plants 1 Fruit Tree</div>
+          </div>
+        </div>
+        <div style="background:var(--bg-soft);padding:1.5rem;border-radius:12px;display:flex;align-items:center;gap:1rem;">
+          <i class="fas fa-users" style="font-size:1.5rem;color:var(--green);"></i>
+          <div>
+            <div style="font-weight:800;color:var(--dark);font-size:1.1rem;">₹2,000</div>
+            <div style="font-size:.85rem;color:var(--text-light);">Sponsors A Family</div>
+          </div>
+        </div>
+        <div style="background:var(--bg-soft);padding:1.5rem;border-radius:12px;display:flex;align-items:center;gap:1rem;">
+          <i class="fas fa-chalkboard-teacher" style="font-size:1.5rem;color:var(--green);"></i>
+          <div>
+            <div style="font-weight:800;color:var(--dark);font-size:1.1rem;">₹5,000</div>
+            <div style="font-size:.85rem;color:var(--text-light);">Funds A Workshop</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="donate-tiers" id="donateTiers" style="margin-bottom:3rem;">
+        <div class="tier-card selected" data-amount="500" onclick="selectTier(this)">
+          <div class="tier-icon">🌱</div>
+          <div class="tier-amount">₹500</div>
+          <div class="tier-label">Sapling</div>
+          <div class="tier-desc">Plant 1 fruit tree</div>
+        </div>
+        <div class="tier-card" data-amount="2000" onclick="selectTier(this)">
+          <div class="tier-icon">🌳</div>
+          <div class="tier-amount">₹2,000</div>
+          <div class="tier-label">Grove</div>
+          <div class="tier-desc">4 trees + family support</div>
+        </div>
+        <div class="tier-card" data-amount="5000" onclick="selectTier(this)">
+          <div class="tier-icon">🌲</div>
+          <div class="tier-amount">₹5,000</div>
+          <div class="tier-label">Forest</div>
+          <div class="tier-desc">10 trees + wellness coaching</div>
+        </div>
+      </div>
+      <div class="custom-amount form-group">
+        <label class="form-label" for="custom-amt">Or enter a custom amount (₹)</label>
+        <input type="number" id="custom-amt" class="form-input" placeholder="e.g. 1000" min="100" />
+      </div>
+      <form id="donateForm" onsubmit="handleDonate(event)" class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="d-name">Full Name *</label>
+          <input type="text" id="d-name" class="form-input" placeholder="Your full name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="d-email">Email Address *</label>
+          <input type="email" id="d-email" class="form-input" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="d-phone">Phone Number</label>
+          <input type="tel" id="d-phone" class="form-input" placeholder="+91 99999 99999" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="d-purpose">Donation Purpose</label>
+          <select id="d-purpose" class="form-input">
+            <option>Tree Planting Mission</option>
+            <option>Health Coaching Programs</option>
+            <option>Wealth Education Programs</option>
+            <option>General Fund — Where Needed Most</option>
+          </select>
+        </div>
+        <div class="form-group form-full">
+          <label class="form-label" for="d-msg">Message (Optional)</label>
+          <textarea id="d-msg" class="form-input" style="min-height:120px;" placeholder="Share your reason for donating..."></textarea>
+        </div>
+        <div class="form-full">
+          <button type="submit" class="btn-gold-solid form-submit">
+            <i class="fas fa-lock"></i> Donate Securely Now
+          </button>
+          <p style="text-align:center;margin-top:1.5rem;font-size:.85rem;color:var(--text-light);display:flex;align-items:center;justify-content:center;gap:.5rem;">
+            <i class="fas fa-shield-alt" style="color:var(--green);"></i> SSL Secured · Tax deductible under Section 80G
+          </p>
+        </div>
+      </form>
+      <div class="form-success" id="donateSuccess" style="text-align:center;padding:3rem 0;display:none;">
+        <i class="fas fa-heart" style="font-size:3rem;color:var(--green);margin-bottom:1.5rem;display:block;"></i>
+        <h3 style="font-size:1.5rem;margin-bottom:1rem;">Thank You for Your Generosity!</h3>
+        <p style="color:var(--text-light);max-width:500px;margin:0 auto;line-height:1.6;">
+          A confirmation email has been sent to you. Your support directly helps us grow a greener, healthier world. 🌿
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 Grow Green Foundation. All rights reserved. Registered Non-Profit Trust.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+function selectTier(el) {
+  document.querySelectorAll('.tier-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('custom-amt').value = '';
+}
+function handleDonate(e) {
+  e.preventDefault();
+  document.getElementById('donateForm').style.display = 'none';
+  document.getElementById('donateSuccess').style.display = 'block';
+}
+</script>
+  <!-- ===== FLOATING PLANT A TREE BUTTON ===== -->
+  <button class="float-btn" onclick="window.location.href='donate.html'">
+    <span>🌱 Plant a Tree</span>
+  </button>
+
+</body>
+</html>
