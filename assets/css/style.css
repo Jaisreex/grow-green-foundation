@@ -1240,6 +1240,48 @@ img { max-width: 100%; height: auto; display: block; }
   .standard-hero.full-screen { min-height: 100vh; }
 }
 
+
+/* ---------- OUR MISSION SECTION ---------- */
+.mission-intro-section {
+  padding: 8rem 0;
+  background: var(--white);
+  text-align: center;
+}
+
+.mission-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.mission-intro-section h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 3rem;
+  font-family: var(--font-head);
+}
+
+.mission-intro-section p {
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.mission-highlight {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 700;
+  color: var(--green);
+  margin-top: 3.5rem;
+  font-family: var(--font-head);
+}
+
+@media (max-width: 768px) {
+  .mission-intro-section { padding: 6rem 0; }
+  .mission-highlight { margin-top: 2.5rem; }
+}
+
 /* ---------- THE GROWING CRISIS SECTION ---------- */
 .crisis-section {
   padding: 6rem 0;
