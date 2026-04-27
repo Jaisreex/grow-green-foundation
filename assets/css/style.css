@@ -504,12 +504,12 @@ img { max-width: 100%; height: auto; display: block; }
 /* ---------- MODERN HERO V2 (GLASSMORPHISM) ---------- */
 .hero-v2 {
   position: relative; 
-  min-height: 100vh;
+  min-height: 85vh;
   width: 100%;
   display: flex; 
   align-items: center; 
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 80px;
   overflow: hidden;
   background-color: var(--dark);
 }
@@ -574,9 +574,9 @@ img { max-width: 100%; height: auto; display: block; }
   z-index: 10;
   width: 100%;
   max-width: 1400px;
-  padding: 0 4rem;
+  padding: 0 2rem;
   display: flex;
-  justify-content: center; /* Centered but spacious */
+  justify-content: center; 
 }
 
 /* Glass card styles removed as per request */
