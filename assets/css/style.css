@@ -1225,3 +1225,77 @@ img { max-width: 100%; height: auto; display: block; }
   .logo-img-main { height: 100px; }
   .navbar.scrolled .logo-img-main { height: 60px; }
 }
+
+/* ---------- THE GROWING CRISIS SECTION ---------- */
+.crisis-section {
+  padding: 6rem 0;
+  background-color: #fcfcfc;
+}
+
+.crisis-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.crisis-header h2 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: var(--dark);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.crisis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.crisis-card {
+  background: var(--white);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.crisis-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  border-color: rgba(45,90,39,0.1);
+}
+
+.crisis-icon {
+  font-size: 1.8rem;
+  color: var(--green);
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.crisis-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 1.2rem;
+}
+
+.crisis-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .crisis-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .crisis-grid { grid-template-columns: 1fr; }
+  .crisis-section { padding: 4rem 0; }
+  .crisis-card { padding: 2.5rem 1.5rem; }
+}
