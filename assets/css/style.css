@@ -1195,6 +1195,10 @@ img { max-width: 100%; height: auto; display: block; }
   overflow: hidden;
 }
 
+.standard-hero.full-screen {
+  min-height: 100vh;
+}
+
 .standard-hero::before {
   content: '';
   position: absolute;
@@ -1233,6 +1237,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 768px) {
   .standard-hero { padding: 8rem 0 5rem; min-height: 60vh; }
+  .standard-hero.full-screen { min-height: 100vh; }
 }
 
 /* ---------- THE GROWING CRISIS SECTION ---------- */
