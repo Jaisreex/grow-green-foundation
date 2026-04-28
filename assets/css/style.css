@@ -1251,10 +1251,56 @@ img { max-width: 100%; height: auto; display: block; }
   .navbar.scrolled .logo-img-main { height: 60px; }
 }
 
+/* ---------- LOGO BAR (above hero) ---------- */
+.logo-bar {
+  background: #ffffff;
+  padding-top: 72px; /* clears fixed navbar */
+  border-bottom: 1px solid rgba(45, 90, 39, 0.08);
+  position: relative;
+  z-index: 10;
+}
+
+.logo-bar-inner {
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 1rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo-bar-img {
+  height: 110px;
+  width: auto;
+  display: block;
+  background: transparent;
+  transition: var(--transition);
+}
+
+.logo-bar-img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 1024px) {
+  .logo-bar-inner { padding: 1rem 2rem; }
+  .logo-bar-img { height: 90px; }
+}
+
+@media (max-width: 768px) {
+  .logo-bar { padding-top: 68px; }
+  .logo-bar-inner { padding: 0.75rem 1.5rem; }
+  .logo-bar-img { height: 75px; }
+}
+
+@media (max-width: 480px) {
+  .logo-bar-img { height: 60px; }
+}
+
 /* ---------- STANDARD HERO (USED ACROSS ALL PAGES) ---------- */
+
 .standard-hero {
   position: relative;
-  padding: 10rem 0 7rem;
+  padding: 6rem 0 7rem;
   text-align: center;
   background-size: cover;
   background-position: center;
