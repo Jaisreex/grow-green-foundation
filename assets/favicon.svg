@@ -1,13 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Tree Trunk -->
-  <path d="M30 48 L34 48 L33 30 L31 30 Z" fill="#5D4037"/>
-  <!-- Leaves -->
-  <circle cx="28" cy="28" r="10" fill="#2D5A27"/>
-  <circle cx="36" cy="28" r="10" fill="#2D5A27"/>
-  <circle cx="32" cy="20" r="10" fill="#2D5A27"/>
-  <!-- Fruits -->
-  <circle cx="28" cy="28" r="3" fill="#FFD000"/>
-  <circle cx="36" cy="28" r="3" fill="#FFD000"/>
-  <!-- Ground -->
-  <ellipse cx="32" cy="50" rx="20" ry="4" fill="#2D5A27"/>
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2D5A27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B3B18;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Modern Stylized Tree/Leaf -->
+  <path d="M32 10 Q45 20 45 35 A13 13 0 0 1 32 48 A13 13 0 0 1 19 35 Q19 20 32 10 Z" fill="url(#leafGrad)"/>
+  <circle cx="32" cy="28" r="5" fill="#FFD000"/> <!-- The "Fruit" -->
+  <path d="M32 48 L32 58" stroke="#5D4037" stroke-width="4" stroke-linecap="round"/> <!-- Trunk -->
 </svg>
