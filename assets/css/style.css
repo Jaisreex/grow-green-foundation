@@ -136,12 +136,12 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .logo-img-main {
-  height: 120px;
+  height: 180px;
   width: auto;
   object-fit: contain;
   transition: var(--transition);
 }
-.navbar.scrolled .logo-img-main { height: 80px; }
+.navbar.scrolled .logo-img-main { height: 120px; }
 
 .nav-tagline {
   font-family: var(--font-body);
@@ -919,7 +919,7 @@ img { max-width: 100%; height: auto; display: block; }
 .footer-top { padding: 5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
 .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5.5rem; }
 .footer-logo { display: flex; align-items: center; gap: .75rem; margin-bottom: 2.5rem; }
-.footer-logo img { height: 120px; width: auto; max-width: 400px; }
+.footer-logo img { height: 180px; width: auto; max-width: 400px; }
 .footer-logo-tag  { font-size: .75rem; color: var(--green); }
 .footer-brand p { color: var(--text-light); font-size: .9rem; line-height: 1.7; }
 .social-icons { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 2.5rem; }
@@ -1146,14 +1146,14 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-item-dropdown.open .dropdown-menu {
     display: block;
   }
-  .logo-img-main { height: 140px; }
-  .navbar.scrolled .logo-img-main { height: 90px; }
+  .logo-img-main { height: 200px; }
+  .navbar.scrolled .logo-img-main { height: 130px; }
 }
 
 @media (max-width: 768px) {
   .nav-container { padding: 0 1.5rem; }
-  .logo-img-main { height: 120px; }
-  .navbar.scrolled .logo-img-main { height: 75px; }
+  .logo-img-main { height: 160px; }
+  .navbar.scrolled .logo-img-main { height: 100px; }
 
   .hero-title { font-size: 2.8rem; }
   .hero-subtitle { font-size: 1rem; }
@@ -1187,7 +1187,7 @@ img { max-width: 100%; height: auto; display: block; }
   .footer-logo { justify-content: center; }
   .social-icons { justify-content: center; }
   .footer-contact p { justify-content: center; }
-  .footer-logo img { height: 80px; }
+  .footer-logo img { height: 120px; }
   .page-header, .join-hero { padding: 9rem 1.5rem 6rem; }
 }
 
@@ -1244,8 +1244,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 480px) {
   .hero-title { font-size: 2.2rem; }
-  .logo-img-main { height: 100px; }
-  .navbar.scrolled .logo-img-main { height: 60px; }
+  .logo-img-main { height: 140px; }
+  .navbar.scrolled .logo-img-main { height: 85px; }
 }
 
 /* ---------- STANDARD HERO (USED ACROSS ALL PAGES) ---------- */
