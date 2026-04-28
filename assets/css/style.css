@@ -113,7 +113,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: rgba(255,255,255,.98); backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(45,90,39,.08);
   transition: var(--transition);
-  padding: 0.25rem 0;
+  padding: 0.5rem 0;
 }
 .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.08); }
 
@@ -136,7 +136,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .logo-img-main {
-  height: 65px;
+  height: 120px;
   width: auto;
   object-fit: contain;
   background: transparent;
@@ -144,7 +144,7 @@ img { max-width: 100%; height: auto; display: block; }
   image-rendering: -webkit-optimize-contrast;
   transition: var(--transition);
 }
-.navbar.scrolled .logo-img-main { height: 50px; }
+.navbar.scrolled .logo-img-main { height: 80px; }
 
 .nav-tagline {
   font-family: var(--font-body);
@@ -1149,14 +1149,14 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-item-dropdown.open .dropdown-menu {
     display: block;
   }
-  .logo-img-main { height: 65px; }
-  .navbar.scrolled .logo-img-main { height: 50px; }
+  .logo-img-main { height: 140px; }
+  .navbar.scrolled .logo-img-main { height: 90px; }
 }
 
 @media (max-width: 768px) {
   .nav-container { padding: 0 1.5rem; }
-  .logo-img-main { height: 60px; }
-  .navbar.scrolled .logo-img-main { height: 48px; }
+  .logo-img-main { height: 120px; }
+  .navbar.scrolled .logo-img-main { height: 75px; }
 
   .hero-title { font-size: 2.8rem; }
   .hero-subtitle { font-size: 1rem; }
@@ -1247,8 +1247,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 480px) {
   .hero-title { font-size: 2.2rem; }
-  .logo-img-main { height: 55px; }
-  .navbar.scrolled .logo-img-main { height: 44px; }
+  .logo-img-main { height: 100px; }
+  .navbar.scrolled .logo-img-main { height: 60px; }
 }
 
 /* ---------- STANDARD HERO (USED ACROSS ALL PAGES) ---------- */
