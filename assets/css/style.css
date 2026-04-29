@@ -286,14 +286,14 @@ img {
 }
 
 .logo-img-main {
-  height: 200px;
+  height: 80px; /* Reduced from 200px to fit centered in 100px header */
   width: auto;
   object-fit: contain;
   transition: height 0.3s ease;
 }
 
 .navbar.scrolled .logo-img-main {
-  height: 80px;
+  height: 60px; /* Scaled down for 80px scrolled header */
 }
 
 .nav-tagline {
