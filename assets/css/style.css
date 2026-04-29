@@ -286,7 +286,7 @@ img {
 }
 
 .logo-img-main {
-  height: 80px;
+  height: 200px;
   width: auto;
   object-fit: contain;
   transition: height 0.3s ease;
@@ -1056,7 +1056,7 @@ img {
   align-items: center;
   justify-content: center;
   font-size: 2.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem; /* Reduced to bring heading closer */
   transition: var(--transition);
 }
 
@@ -1067,9 +1067,12 @@ img {
 }
 
 .solution-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
+  font-size: 2.1rem; /* Increased size */
+  margin-bottom: 1.5rem;
   color: var(--green-dark);
+  line-height: 1.2;
+  font-weight: 900;
+  max-width: 280px; /* Force 2 lines for typical headings */
 }
 
 .solution-card p {
