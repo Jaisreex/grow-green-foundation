@@ -286,7 +286,7 @@ img {
 }
 
 .logo-img-main {
-  height: 80px;
+  height: 200px;
   width: auto;
   object-fit: contain;
   transition: height 0.3s ease;
