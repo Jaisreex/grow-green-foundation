@@ -226,7 +226,7 @@ img {
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(45, 90, 39, 0.08);
   transition: var(--transition);
-  padding: 0.5rem 0;
+  padding: 0;
 }
 .navbar.scrolled {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
@@ -251,7 +251,7 @@ img {
 }
 
 .logo-img-main {
-  height: 80px;
+  height: 60px;
   width: auto;
   object-fit: contain;
   background: transparent;
@@ -260,7 +260,7 @@ img {
   transition: var(--transition);
 }
 .navbar.scrolled .logo-img-main {
-  height: 60px;
+  height: 45px;
 }
 
 .nav-tagline {
@@ -1812,10 +1812,10 @@ img {
     display: block;
   }
   .logo-img-main {
-    height: 75px;
+    height: 60px;
   }
   .navbar.scrolled .logo-img-main {
-    height: 55px;
+    height: 45px;
   }
 }
 
@@ -1824,10 +1824,10 @@ img {
     padding: 0 1.5rem;
   }
   .logo-img-main {
-    height: 70px;
+    height: 55px;
   }
   .navbar.scrolled .logo-img-main {
-    height: 50px;
+    height: 45px;
   }
 
   .hero-title {
@@ -2107,10 +2107,10 @@ img {
     font-size: 2.2rem;
   }
   .logo-img-main {
-    height: 65px;
+    height: 50px;
   }
   .navbar.scrolled .logo-img-main {
-    height: 45px;
+    height: 40px;
   }
 }
 
