@@ -1020,7 +1020,7 @@ img {
 
 .solution-card {
   background: var(--white);
-  padding: 3.5rem 3rem;
+  padding: 2.5rem; /* Slightly more compact */
   border-radius: 30px;
   border: 1px solid rgba(45, 90, 39, 0.08);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.03);
@@ -1028,15 +1028,18 @@ img {
   position: relative;
   z-index: 1;
   text-align: left;
+  display: flex; /* Side-by-side */
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 
 .solution-card::before {
   content: "";
   position: absolute;
-  top: 3.5rem; /* Aligned with icon box top padding */
+  top: 2.5rem; /* Aligned with new padding */
   left: 0;
   width: 5px;
-  height: 80px; /* Matches icon box height */
+  height: 64px; /* Matches new icon box height */
   background: var(--green);
   border-radius: 0 4px 4px 0;
   transition: var(--transition);
@@ -1059,16 +1062,17 @@ img {
 }
 
 .solution-icon-box {
-  width: 80px;
-  height: 80px;
+  width: 64px; /* Smaller as per reference */
+  height: 64px;
+  flex-shrink: 0; /* Prevent shrinking */
   background: var(--green-pale);
   color: var(--green);
-  border-radius: 20px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
-  margin-bottom: 1.25rem; /* Reduced to bring heading closer */
+  font-size: 1.8rem;
+  margin-bottom: 0; /* Removed for horizontal layout */
   transition: var(--transition);
 }
 
@@ -1079,18 +1083,17 @@ img {
 }
 
 .solution-card h3 {
-  font-size: 2.1rem; /* Increased size */
-  margin-bottom: 1.5rem;
+  font-size: 1.7rem; /* Adjusted for better horizontal fit */
+  margin-bottom: 0.75rem;
   color: var(--green-dark);
-  line-height: 1.2;
-  font-weight: 900;
-  max-width: 280px; /* Force 2 lines for typical headings */
+  line-height: 1.25;
+  font-weight: 800;
 }
 
 .solution-card p {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-light);
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 .solution-closing {
@@ -1119,6 +1122,17 @@ img {
 
   .solution-card {
     padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .solution-card {
+    flex-direction: column; /* Stack on mobile */
+    gap: 1rem;
+  }
+  
+  .solution-card::before {
+    height: 40px; /* Smaller line for stacked view */
   }
 }
 
