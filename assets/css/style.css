@@ -251,7 +251,7 @@ img {
 }
 
 .logo-img-main {
-  height: 120px;
+  height: 80px;
   width: auto;
   object-fit: contain;
   background: transparent;
@@ -260,7 +260,7 @@ img {
   transition: var(--transition);
 }
 .navbar.scrolled .logo-img-main {
-  height: 80px;
+  height: 60px;
 }
 
 .nav-tagline {
@@ -1812,10 +1812,10 @@ img {
     display: block;
   }
   .logo-img-main {
-    height: 100px;
+    height: 75px;
   }
   .navbar.scrolled .logo-img-main {
-    height: 70px;
+    height: 55px;
   }
 }
 
@@ -1824,10 +1824,10 @@ img {
     padding: 0 1.5rem;
   }
   .logo-img-main {
-    height: 90px;
+    height: 70px;
   }
   .navbar.scrolled .logo-img-main {
-    height: 60px;
+    height: 50px;
   }
 
   .hero-title {
@@ -2107,10 +2107,10 @@ img {
     font-size: 2.2rem;
   }
   .logo-img-main {
-    height: 80px;
+    height: 65px;
   }
   .navbar.scrolled .logo-img-main {
-    height: 50px;
+    height: 45px;
   }
 }
 
