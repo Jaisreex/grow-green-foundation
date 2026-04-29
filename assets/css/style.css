@@ -1020,7 +1020,8 @@ img {
 
 .solution-card {
   background: var(--white);
-  padding: 2.5rem; /* Slightly more compact */
+  padding: 2.5rem;
+  /* Slightly more compact */
   border-radius: 30px;
   border: 1px solid rgba(45, 90, 39, 0.08);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.03);
@@ -1028,7 +1029,8 @@ img {
   position: relative;
   z-index: 1;
   text-align: left;
-  display: flex; /* Side-by-side */
+  display: flex;
+  /* Side-by-side */
   align-items: flex-start;
   gap: 1.5rem;
 }
@@ -1050,9 +1052,11 @@ img {
 }
 
 .solution-icon-box {
-  width: 64px; /* Smaller as per reference */
+  width: 64px;
+  /* Smaller as per reference */
   height: 64px;
-  flex-shrink: 0; /* Prevent shrinking */
+  flex-shrink: 0;
+  /* Prevent shrinking */
   background: var(--green-pale);
   color: var(--green);
   border-radius: 16px;
@@ -1060,7 +1064,8 @@ img {
   align-items: center;
   justify-content: center;
   font-size: 1.8rem;
-  margin-bottom: 0; /* Removed for horizontal layout */
+  margin-bottom: 0;
+  /* Removed for horizontal layout */
   transition: var(--transition);
 }
 
@@ -1071,7 +1076,8 @@ img {
 }
 
 .solution-card h3 {
-  font-size: 1.7rem; /* Adjusted for better horizontal fit */
+  font-size: 1.7rem;
+  /* Adjusted for better horizontal fit */
   margin-bottom: 0.75rem;
   color: var(--green-dark);
   line-height: 1.25;
@@ -1115,7 +1121,8 @@ img {
 
 @media (max-width: 576px) {
   .solution-card {
-    flex-direction: column; /* Stack on mobile */
+    flex-direction: column;
+    /* Stack on mobile */
     gap: 1rem;
   }
 }
@@ -1539,7 +1546,7 @@ img {
 }
 
 .footer-logo img {
-  height: 100px;
+  height: 250px;
   width: auto;
   max-width: 450px;
   background: transparent;
