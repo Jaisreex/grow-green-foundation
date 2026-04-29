@@ -1030,6 +1030,18 @@ img {
   text-align: left;
 }
 
+.solution-card::before {
+  content: "";
+  position: absolute;
+  top: 3.5rem; /* Aligned with icon box top padding */
+  left: 0;
+  width: 5px;
+  height: 80px; /* Matches icon box height */
+  background: var(--green);
+  border-radius: 0 4px 4px 0;
+  transition: var(--transition);
+}
+
 .solution-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 25px 60px rgba(45, 90, 39, 0.1);
