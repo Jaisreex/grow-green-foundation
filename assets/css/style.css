@@ -241,12 +241,12 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 85px;
+  height: 100px;
   transition: height 0.3s ease;
 }
 
 .navbar.scrolled .nav-container {
-  height: 70px;
+  height: 80px;
 }
 
 .nav-brand {
@@ -256,14 +256,14 @@ img {
 }
 
 .logo-img-main {
-  height: 55px;
+  height: 75px;
   width: auto;
   object-fit: contain;
   transition: height 0.3s ease;
 }
 
 .navbar.scrolled .logo-img-main {
-  height: 45px;
+  height: 60px;
 }
 
 .nav-tagline {
