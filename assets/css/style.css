@@ -298,12 +298,12 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 96px;
+  height: 150px;
   transition: height 0.35s ease, padding 0.35s ease;
 }
 
 .navbar.scrolled .nav-container {
-  height: 86px;
+  height: 110px;
 }
 
 .nav-brand {
@@ -315,14 +315,14 @@ img {
 }
 
 .logo-img-main {
-  height: 65px;
+  height: 120px;
   width: auto;
   object-fit: contain;
   transition: height 0.35s ease;
 }
 
 .navbar.scrolled .logo-img-main {
-  height: 55px;
+  height: 85px;
 }
 
 .nav-tagline {
@@ -2000,7 +2000,7 @@ img {
     justify-self: unset;
     flex-direction: column;
     position: fixed;
-    top: 116px;
+    top: 175px;
     left: 0;
     width: 100%;
     background: var(--white);
@@ -2046,11 +2046,11 @@ img {
   }
 
   .logo-img-main {
-    height: 60px;
+    height: 90px;
   }
 
   .navbar.scrolled .logo-img-main {
-    height: 45px;
+    height: 70px;
   }
 }
 
@@ -2060,11 +2060,11 @@ img {
   }
 
   .logo-img-main {
-    height: 55px;
+    height: 80px;
   }
 
   .navbar.scrolled .logo-img-main {
-    height: 45px;
+    height: 60px;
   }
 
   .hero-title {
