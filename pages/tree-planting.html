@@ -25,23 +25,32 @@
 </head>
 <body>
 
-<nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="../index.html" class="nav-brand"><img src="../assets/images/fruitforest-logo.png" alt="Logo" class="logo-img-main" /></a>
+      <!-- Logo Left -->
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
+      </a>
+
+      <!-- Menu Center -->
       <div class="nav-links" id="navLinks">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About Us</a>
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About Us</a>
         <a href="services.html" class="nav-link">Our Initiative</a>
         <a href="../index.html#impact-map" class="nav-link">Impact</a>
         <a href="join.html" class="nav-link">Get Involved</a>
         <a href="../index.html#faq" class="nav-link">FAQ</a>
       </div>
+
+      <!-- Actions Right -->
       <div class="nav-actions">
         <a href="donate.html" class="btn-donate-nav">Donate</a>
-        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-</nav>
+  </nav>
 
 <header class="detail-hero full-screen" style="background-image: url('../assets/images/tree_planting_card.png');">
   <div class="container reveal">
@@ -131,16 +140,10 @@
     </div>
   </footer>
 
-<!-- Same sticky actions button -->
-<button class="float-btn" onclick="window.location.href='donate.html'"><span>🌱 Plant a Tree</span></button>
+  <button class="float-btn" onclick="window.location.href='donate.html'">
+    <span>🌱 Plant a Tree</span>
+  </button>
 
-<script src="../assets/js/main.js"></script>
-<script>
-  // Simple reveal logic for this page
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
