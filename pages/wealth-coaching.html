@@ -9,19 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    .detail-hero {
-      padding: 18rem 0 10rem;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/images/wealth_coaching_card.png');
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      color: white;
-    }
-    .detail-hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 2rem; }
     .content-section { padding: 8rem 0; line-height: 1.8; color: var(--text-light); }
     .content-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: start; }
     .content-text h2 { color: var(--dark); font-size: 2.5rem; margin-bottom: 2.5rem; }
     .content-text p { margin-bottom: 2rem; font-size: 1.15rem; }
+    .impact-list { list-style: none; margin-top: 3rem; }
+    .impact-list li { margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
+    .impact-list i { color: var(--green); margin-top: 0.3rem; }
     
     .sidebar-card { background: var(--bg-soft); padding: 3rem; border-radius: 20px; position: sticky; top: 120px; }
     .sidebar-card h3 { font-size: 1.5rem; margin-bottom: 1.5rem; }
@@ -31,28 +25,37 @@
 </head>
 <body>
 
-<nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="../index.html" class="nav-brand"><img src="../assets/images/fruitforest-logo.png" alt="Logo" class="logo-img-main" /></a>
+      <!-- Logo Left -->
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
+      </a>
+
+      <!-- Menu Center -->
       <div class="nav-links" id="navLinks">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About Us</a>
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About Us</a>
         <a href="services.html" class="nav-link">Our Initiative</a>
         <a href="../index.html#impact-map" class="nav-link">Impact</a>
         <a href="join.html" class="nav-link">Get Involved</a>
         <a href="../index.html#faq" class="nav-link">FAQ</a>
       </div>
+
+      <!-- Actions Right -->
       <div class="nav-actions">
         <a href="donate.html" class="btn-donate-nav">Donate</a>
-        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-</nav>
+  </nav>
   
 
 
-<header class="detail-hero">
-  <div class="container">
+<header class="detail-hero full-screen" style="background-image: url('../assets/images/wealth_coaching_card.png');">
+  <div class="container reveal">
     <div class="section-tag" style="background: var(--gold); color: var(--dark); border:none;">Financial Literacy</div>
     <h1>Wealth Coaching</h1>
   </div>
@@ -66,7 +69,11 @@
       
       <p>We provide workshops and personal mentorship on budgeting, saving, ethical investing, and entrepreneurship. This program aims to reduce economic inequality and foster a society where prosperity is accessible to everyone.</p>
       
-      <p>A self-reliant community is a strong community. By fostering financial awareness, we are not just growing portfolios, but the future of society itself. Join us to learn how to secure your financial future today.</p>
+      <ul class="impact-list">
+        <li><i class="fas fa-check-circle"></i> <div><strong>Financial Literacy:</strong> Teaching budgeting, saving, and ethical investing.</div></li>
+        <li><i class="fas fa-check-circle"></i> <div><strong>Entrepreneurship:</strong> Empowering individuals to build sustainable businesses.</div></li>
+        <li><i class="fas fa-check-circle"></i> <div><strong>Economic Resilience:</strong> Reducing inequality and fostering accessible prosperity for all.</div></li>
+      </ul>
     </div>
     
     <aside class="sidebar-card reveal delay-1">
@@ -138,11 +145,6 @@
 <button class="float-btn" onclick="window.location.href='donate.html'"><span>🌱 Plant a Tree</span></button>
 
 <script src="../assets/js/main.js"></script>
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+
 </body>
 </html>
