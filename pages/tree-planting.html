@@ -3,147 +3,233 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tree Planting Initiative | Fruit Forest Foundation</title>
+  <title>Our Mission | Fruit Forest Foundation</title>
   <link rel="icon" href="../assets/favicon.svg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    .content-section { padding: 8rem 0; line-height: 1.8; color: var(--text-light); }
-    .content-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: start; }
-    .content-text h2 { color: var(--dark); font-size: 2.5rem; margin-bottom: 2.5rem; }
-    .content-text p { margin-bottom: 2rem; font-size: 1.15rem; }
-    .impact-list { list-style: none; margin-top: 3rem; }
-    .impact-list li { margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
-    .impact-list i { color: var(--green); margin-top: 0.3rem; }
-    
-    .sidebar-card { background: var(--bg-soft); padding: 3rem; border-radius: 20px; position: sticky; top: 120px; }
-    .sidebar-card h3 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+    .about-hero {
+      padding: 15rem 0 10rem;
+      text-align: center;
+      background: var(--white);
+    }
+    .about-hero h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      color: var(--dark);
+      margin-bottom: 2rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.1;
+    }
 
-    @media (max-width: 992px) { .content-grid { grid-template-columns: 1fr; gap: 4rem; } }
+    .about-section {
+      padding: 8rem 0;
+    }
+
+    .pillars-intro {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .pillars-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4rem;
+    }
+
+    .pillar-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .pillar-item p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    .why-fruit-trees {
+      background: var(--bg-soft);
+      padding: 10rem 0;
+      text-align: center;
+    }
+    .why-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .why-content h2 {
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+      color: var(--dark);
+    }
+    .why-content p {
+      font-size: 1.4rem;
+      color: var(--text);
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .vision-final {
+      padding: 12rem 0;
+      text-align: center;
+      background: var(--white);
+    }
+    .vision-card-wide {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    }
+    .vision-card-wide i {
+      font-size: 3rem;
+      color: var(--green);
+      margin-bottom: 2rem;
+    }
+    .vision-card-wide h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .vision-card-wide p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      line-height: 1.9;
+    }
+
+    @media (max-width: 992px) {
+      .pillars-container { grid-template-columns: 1fr; gap: 3rem; }
+      .about-hero { padding: 12rem 0 8rem; }
+    }
   </style>
 </head>
 <body>
 
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <!-- Logo Left -->
-      <a href="../index.html" class="nav-brand">
-        <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
-      </a>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-brand">
+      <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
+    </a>
 
-      <!-- Menu Center -->
-      <div class="nav-links" id="navLinks">
-        <a href="../index.html#home" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link active">About Us</a>
-        <a href="services.html" class="nav-link">Our Initiative</a>
-        <a href="../index.html#impact-map" class="nav-link">Impact</a>
-        <a href="join.html" class="nav-link">Get Involved</a>
-        <a href="../index.html#faq" class="nav-link">FAQ</a>
-      </div>
-
-      <!-- Actions Right -->
-      <div class="nav-actions">
-        <a href="donate.html" class="btn-donate-nav">Donate</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html#home" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About Us</a>
+      <a href="services.html" class="nav-link">Our Initiative</a>
+      <a href="../index.html#impact-map" class="nav-link">Impact</a>
+      <a href="join.html" class="nav-link">Get Involved</a>
+      <a href="../index.html#faq" class="nav-link">FAQ</a>
     </div>
-  </nav>
 
-<header class="detail-hero full-screen" style="background-image: url('../assets/images/fruit-forest.png');">
+    <div class="nav-actions">
+      <a href="donate.html" class="btn-donate-nav">Donate</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="about-hero">
   <div class="container reveal">
-    <div class="section-tag" style="background: var(--gold); color: var(--dark); border:none;">Primary Program</div>
-    <h1>Tree Planting Initiative</h1>
+    <div class="section-tag">Our Mission</div>
+    <h1>We Restore Ecosystems, Nourish Communities, and Secure Future Generations.</h1>
   </div>
 </header>
 
-<main class="content-section">
-  <div class="container content-grid">
-    <div class="content-text reveal">
-      <h2>Restoring Earth, One Fruit Tree at a Time</h2>
-      <p>Our Tree Planting Initiative is the cornerstone of Fruit Forest Foundation. We don't just plant saplings; we design community orchards that serve as vibrant, self-sustaining food systems for urban and rural neighborhoods alike.</p>
-      
-      <p>We focus exclusively on fruit-bearing and nutrient-rich indigenous trees that are compatible with the local climate, ensuring high survival rates and maximum community benefit.</p>
-      
-      <ul class="impact-list">
-        <li><i class="fas fa-check-circle"></i> <div><strong>Ecosystem Restoration:</strong> Improving soil health, supporting pollinators, and increasing local biodiversity.</div></li>
-        <li><i class="fas fa-check-circle"></i> <div><strong>Food Security:</strong> Creating free, accessible food sources for people who need them most.</div></li>
-        <li><i class="fas fa-check-circle"></i> <div><strong>Climate Mitigation:</strong> Naturally sequestering carbon and reducing the 'heat island' effect in concrete-heavy cities.</div></li>
-      </ul>
+<section class="about-section">
+  <div class="container">
+    <div class="pillars-intro reveal">
+      <div class="section-tag">Our Pillars</div>
+      <h2 class="section-title">A Holistic Path to Abundance</h2>
     </div>
     
-    <aside class="sidebar-card reveal delay-1">
-      <h3>Get Involved</h3>
-      <p>Your support helps us scale our planting drives across new regions and ensures these trees are maintained until they reach maturity.</p>
-      <a href="join.html" class="btn-primary" style="display:block; text-align:center; margin-top:2rem;">Be a Volunteer</a>
-    </aside>
+    <div class="pillars-container">
+      <div class="pillar-item reveal">
+        <h3><i class="fas fa-tree"></i> Earth</h3>
+        <p>We cultivate resilient fruit forests in public spaces to restore biodiversity and provide free, nutritious food for all. By planting trees, we capture carbon, cool our cities, and create thriving habitats for local wildlife.</p>
+      </div>
+      
+      <div class="pillar-item reveal delay-1">
+        <h3><i class="fas fa-heartbeat"></i> Health</h3>
+        <p>We empower individuals through holistic wellness coaching and nutrition education. Our programs promote physical vitality and mental clarity, ensuring that community members have the strength and resilience to lead healthy, active lives for years to come.</p>
+      </div>
+      
+      <div class="pillar-item reveal delay-2">
+        <h3><i class="fas fa-coins"></i> Wealth</h3>
+        <p>We build financial literacy through practical workshops on wealth creation and responsible management. By teaching people how to navigate their finances, we break cycles of dependency and foster long-term stability for families and local economies.</p>
+      </div>
+    </div>
   </div>
-</main>
+</section>
+
+<section class="why-fruit-trees">
+  <div class="container reveal">
+    <div class="why-content">
+      <div class="section-tag" style="background: var(--white);">Sustainability</div>
+      <h2 class="section-title">Why Fruit Trees?</h2>
+      <p>Every tree we plant serves a dual purpose: restoring the environment while feeding the hungry. Unlike ornamental trees, fruit-bearing forests generate immediate value for communities, turning public spaces into self-sustaining sources of health and nutrition.</p>
+    </div>
+  </div>
+</section>
+
+<section class="vision-final">
+  <div class="container reveal">
+    <div class="vision-card-wide">
+      <i class="fas fa-seedling"></i>
+      <div class="section-tag">Our Vision</div>
+      <h2 class="section-title">The Foundation for Tomorrow</h2>
+      <p>We envision a world where every neighborhood is a garden of abundance and every individual is equipped with the tools to flourish. By integrating environmental restoration with health and financial education, we are building a foundation for a self-sustaining future. Together, we are planting the seeds of change today to ensure that the generations of tomorrow inherit a planet that is not only green but truly abundant.</p>
+      <div style="margin-top: 3rem;">
+        <a href="donate.html" class="btn-primary">Join the Movement</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="footer" id="footer">
-    <div class="footer-top">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
-          </div>
-          <p>Planting the seeds of abundance, wellness, and financial freedom — one community at a time.</p>
-          <div class="social-icons">
-            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
-          </div>
+  <div class="footer-top">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
         </div>
-        <div class="footer-links-group">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="../index.html#home">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Our Initiative</a></li>
-            <li><a href="../index.html#impact-map">Impact Map</a></li>
-            <li><a href="join.html">Get Involved</a></li>
-            <li><a href="../index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-group">
-          <h4>Get Involved</h4>
-          <ul>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="join.html">Volunteer</a></li>
-            <li><a href="join.html">Partner With Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <p><i class="fas fa-envelope"></i> hello@fruitforestfoundation.com</p>
-          <p><i class="fas fa-phone"></i> +1 (800) FRUIT-FOREST</p>
-          <p><i class="fas fa-map-marker-alt"></i> Global · Est. 2024</p>
-          <div class="footer-hashtag">
-            <i class="fab fa-instagram"></i>
-            <span>#Fruit ForestGlobal</span>
-          </div>
-        </div>
+        <p>Planting the seeds of abundance, wellness, and financial freedom — one community at a time.</p>
+      </div>
+      <div class="footer-links-group">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html#home">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Initiative</a></li>
+          <li><a href="join.html">Get Involved</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved. Registered Non-Profit Trust.</p>
-        <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> for the Earth.</p>
-      </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 Fruit Forest Foundation. All rights reserved. Registered Non-Profit Trust.</p>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <button class="float-btn" onclick="window.location.href='donate.html'">
-    <span>🌱 Plant a Tree</span>
-  </button>
-
-  <script src="../assets/js/main.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+  const revealElements = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+  revealElements.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
