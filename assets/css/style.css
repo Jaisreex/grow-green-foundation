@@ -1535,6 +1535,18 @@ img {
   align-items: center;
 }
 
+/* Reveal Animation specific to opp-cards */
+.opp-card.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+
+.opp-card.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .opp-icon-wrapper {
   width: 70px;
   height: 70px;
@@ -1581,8 +1593,9 @@ img {
 }
 
 /* Hover effects */
-.opp-card:hover {
-  transform: translateY(-12px);
+.opp-card:hover,
+.opp-card.reveal.active:hover {
+  transform: translateY(-12px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   border-color: rgba(255, 208, 0, 0.3);
   /* Soft gold accent border */
@@ -1613,7 +1626,9 @@ img {
 }
 
 .opp-card:active,
-.opp-card.animating {
+.opp-card.animating,
+.opp-card.reveal.active:active,
+.opp-card.reveal.active.animating {
   transform: scale(0.97) translateY(-5px);
   background: linear-gradient(to bottom, var(--white) 40%, rgba(45, 90, 39, 0.05) 55%, rgba(45, 90, 39, 0.12) 100%);
   background-size: 100% 210%;
