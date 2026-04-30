@@ -298,12 +298,12 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 150px;
+  height: 200px;
   transition: height 0.35s ease, padding 0.35s ease;
 }
 
 .navbar.scrolled .nav-container {
-  height: 110px;
+  height: 130px;
 }
 
 .nav-brand {
@@ -315,14 +315,14 @@ img {
 }
 
 .logo-img-main {
-  height: 120px;
+  height: 180px;
   width: auto;
   object-fit: contain;
   transition: height 0.35s ease;
 }
 
 .navbar.scrolled .logo-img-main {
-  height: 85px;
+  height: 110px;
 }
 
 .nav-tagline {
@@ -2055,11 +2055,11 @@ img {
   }
 
   .logo-img-main {
-    height: 90px;
+    height: 130px;
   }
 
   .navbar.scrolled .logo-img-main {
-    height: 70px;
+    height: 90px;
   }
 }
 
@@ -2069,11 +2069,11 @@ img {
   }
 
   .logo-img-main {
-    height: 80px;
+    height: 110px;
   }
 
   .navbar.scrolled .logo-img-main {
-    height: 60px;
+    height: 80px;
   }
 
   .hero-title {
