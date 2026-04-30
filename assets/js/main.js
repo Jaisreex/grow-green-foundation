@@ -237,3 +237,17 @@ function showToast(message, type = 'green') {
   document.body.appendChild(toast);
   setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity .3s ease'; setTimeout(() => toast.remove(), 300); }, 4000);
 }
+
+// ---- Opportunities Card Click Handler ----
+function handleOppClick(event, targetUrl) {
+  event.preventDefault();
+  const card = event.currentTarget;
+  
+  // Add animating class to trigger CSS animation
+  card.classList.add('animating');
+  
+  // Wait for animation to finish (approx 400-500ms) before navigating
+  setTimeout(() => {
+    window.location.href = targetUrl;
+  }, 450);
+}
