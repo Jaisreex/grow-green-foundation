@@ -9,55 +9,57 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    /* Old Layout Structure */
     .content-section { padding: 8rem 0; line-height: 1.8; color: var(--text-light); }
     .content-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: start; }
-    .content-text h2 { color: var(--dark); font-size: 2.5rem; margin-bottom: 2.5rem; }
+    .content-text h2 { color: var(--dark); font-size: 2.8rem; margin-bottom: 2.5rem; font-weight: 800; }
     .content-text p { margin-bottom: 2rem; font-size: 1.15rem; }
+    
+    .sidebar-card { background: var(--bg-soft); padding: 3rem; border-radius: 30px; position: sticky; top: 120px; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.02); }
+    .sidebar-card h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--green-dark); font-weight: 800; }
+    
+    /* Legacy Content Reference Styling */
+    .legacy-reference { margin-top: 10rem; padding: 6rem 0; background: var(--bg-soft); border-top: 1px solid rgba(0,0,0,0.05); }
+    .reference-box { background: var(--white); padding: 4rem; border-radius: 30px; border-left: 8px solid var(--gold); }
+    .reference-box h4 { margin-bottom: 2rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+
     .impact-list { list-style: none; margin-top: 3rem; }
     .impact-list li { margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
     .impact-list i { color: var(--green); margin-top: 0.3rem; }
-    
-    .sidebar-card { background: var(--bg-soft); padding: 3rem; border-radius: 20px; position: sticky; top: 120px; }
-    .sidebar-card h3 { font-size: 1.5rem; margin-bottom: 1.5rem; }
 
-    @media (max-width: 992px) { .content-grid { grid-template-columns: 1fr; gap: 4rem; } }
+    @media (max-width: 992px) { 
+        .content-grid { grid-template-columns: 1fr; gap: 4rem; } 
+    }
   </style>
 </head>
 <body>
 
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <!-- Logo Left -->
-      <a href="../index.html" class="nav-brand">
-        <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
-      </a>
-
-      <!-- Menu Center -->
-      <div class="nav-links" id="navLinks">
-        <a href="../index.html#home" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link active">About Us</a>
-        <a href="services.html" class="nav-link">Our Initiative</a>
-        <a href="../index.html#impact-map" class="nav-link">Impact</a>
-        <a href="join.html" class="nav-link">Get Involved</a>
-        <a href="../index.html#faq" class="nav-link">FAQ</a>
-      </div>
-
-      <!-- Actions Right -->
-      <div class="nav-actions">
-        <a href="donate.html" class="btn-donate-nav">Donate</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-brand">
+      <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html#home" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About Us</a>
+      <a href="services.html" class="nav-link">Our Initiative</a>
+      <a href="../index.html#impact-map" class="nav-link">Impact</a>
+      <a href="join.html" class="nav-link">Get Involved</a>
+      <a href="../index.html#faq" class="nav-link">FAQ</a>
     </div>
-  </nav>
-  
+    <div class="nav-actions">
+      <a href="donate.html" class="btn-donate-nav">Donate</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
 
-
-<header class="consistent-hero" style="background-image: url('../assets/images/wealth_coaching_card.png');">
+<header class="consistent-hero" style="background-image: url('../assets/images/wealth_coaching_card.png'); min-height: 80vh; display: flex; align-items: center; width: 100%;">
   <div class="container reveal">
     <div class="section-tag" style="background: var(--gold); color: var(--dark); border:none;">Financial Literacy</div>
-    <h1>Wealth Coaching</h1>
+    <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; max-width: 1000px;">Wealth Coaching</h1>
   </div>
 </header>
 
@@ -84,6 +86,19 @@
   </div>
 </main>
 
+<section class="legacy-reference">
+  <div class="container">
+    <div class="reference-box reveal">
+      <h4>Old Content Reference (For Review)</h4>
+      <div style="opacity: 0.8; font-size: 0.95rem;">
+        <h3 style="margin-bottom: 1.5rem; color: var(--dark);">Sustainable Wealth Creation</h3>
+        <p>Our Wealth Coaching program empowers communities by providing the knowledge needed for financial self-sufficiency. We teach individuals how to manage resources ethically and sustainably, mirroring the growth patterns of the forests we plant.</p>
+        <p style="margin-top: 1rem;">Through workshops on micro-investing and ethical finance, we help participants build lasting value that benefits both their families and the broader ecosystem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="footer" id="footer">
     <div class="footer-top">
       <div class="container footer-grid">
@@ -92,13 +107,6 @@
             <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
           </div>
           <p>Planting the seeds of abundance, wellness, and financial freedom — one community at a time.</p>
-          <div class="social-icons">
-            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
-          </div>
         </div>
         <div class="footer-links-group">
           <h4>Quick Links</h4>
@@ -106,38 +114,15 @@
             <li><a href="../index.html#home">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Our Initiative</a></li>
-            <li><a href="../index.html#impact-map">Impact Map</a></li>
             <li><a href="join.html">Get Involved</a></li>
-            <li><a href="../index.html#faq">FAQ</a></li>
           </ul>
-        </div>
-        <div class="footer-links-group">
-          <h4>Get Involved</h4>
-          <ul>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="join.html">Volunteer</a></li>
-            <li><a href="join.html">Partner With Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <p><i class="fas fa-envelope"></i> hello@fruitforestfoundation.com</p>
-          <p><i class="fas fa-phone"></i> +1 (800) FRUIT-FOREST</p>
-          <p><i class="fas fa-map-marker-alt"></i> Global · Est. 2024</p>
-          <div class="footer-hashtag">
-            <i class="fab fa-instagram"></i>
-            <span>#Fruit ForestGlobal</span>
-          </div>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
+        <p style="margin-bottom: 1rem; opacity: 0.8; font-size: 0.9rem;">Fruit Forest Foundation is a non-profit trust committed to building sustainable communities through fruit tree initiatives.</p>
         <p>&copy; 2026 Fruit Forest Foundation. All rights reserved. Registered Non-Profit Trust.</p>
-        <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> for the Earth.</p>
       </div>
     </div>
   </footer>
@@ -145,6 +130,11 @@
 <button class="float-btn" onclick="window.location.href='donate.html'"><span>🌱 Plant a Tree</span></button>
 
 <script src="../assets/js/main.js"></script>
-
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
