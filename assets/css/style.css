@@ -1150,6 +1150,63 @@ img {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
 }
 
+/* ---------- IMPACT CARDS (HORIZONTAL) ---------- */
+.impact-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.impact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.impact-icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.impact-card-content {
+  flex: 1;
+}
+
+.impact-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.impact-card p {
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  .impact-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .impact-icon-box {
+    margin-bottom: 1.5rem;
+  }
+}
+
 .solution-closing p {
   font-family: var(--font-head);
   font-size: 1.25rem;
