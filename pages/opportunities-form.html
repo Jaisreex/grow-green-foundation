@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opportunities Form | Fruit Forest Foundation</title>
+  <link rel="icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .application-section {
+      padding: 6rem 0 10rem;
+      background: var(--bg-soft);
+    }
+
+    .form-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 4rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .form-card h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--dark);
+      text-align: center;
+    }
+
+    .form-card p {
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 1.1rem 1.4rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: #fafafa;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+      outline: none;
+      background: #fff;
+    }
+
+    .btn-submit {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      justify-content: center;
+      padding: 1.2rem;
+      transition: all 0.4s ease;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(45, 90, 39, 0.3);
+      background: var(--green-dark);
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    @media(max-width:768px) {
+      .application-section {
+        padding: 4rem 0 6rem;
+      }
+
+      .form-card {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .form-card h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Our Initiative</a>
+        <a href="../index.html#impact-map" class="nav-link">Impact</a>
+        <a href="join.html" class="nav-link active">Get Involved</a>
+        <a href="../index.html#faq" class="nav-link">FAQ</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="donate.html" class="btn-donate-nav">Donate</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="standard-hero" style="background-image: url('../assets/images/join_hero_bg.png'); height: 40vh; min-height: 300px; display: flex; align-items: center;">
+    <div class="container reveal">
+      <div class="section-tag" style="background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">Get Involved</div>
+      <h1 class="hero-title" style="font-size: clamp(2rem, 5vw, 3.5rem);">Opportunity Interest Form</h1>
+    </div>
+  </section>
+
+  <section class="application-section">
+    <div class="container">
+      <div class="form-card reveal" id="formCard">
+        <h2>Submit Your Interest</h2>
+        <p>Tell us more about yourself and how you'd like to contribute to our mission.</p>
+        <form id="opportunityForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" name="fullname" placeholder="Enter your full name" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" name="email" placeholder="Enter your email address" required />
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" name="phone" placeholder="Enter your phone number" required />
+          </div>
+          <div class="form-group">
+            <label>City / Location *</label>
+            <input type="text" name="location" placeholder="Enter your city/location" required />
+          </div>
+          <div class="form-group">
+            <label>Area of Interest *</label>
+            <select name="interest" required>
+              <option value="" disabled selected>Select an area of interest</option>
+              <option value="Volunteer Opportunities">Volunteer Opportunities</option>
+              <option value="Community Programs">Community Programs</option>
+              <option value="Environmental Initiatives">Environmental Initiatives</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Availability *</label>
+            <select name="availability" required>
+              <option value="" disabled selected>Select your availability</option>
+              <option value="Weekends">Weekends</option>
+              <option value="Weekdays">Weekdays</option>
+              <option value="Flexible">Flexible</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message / Why are you interested? *</label>
+            <textarea name="message" placeholder="Tell us why you'd like to join..." required style="min-height: 120px; resize: vertical;"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            Submit Your Interest <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+
+      <div class="form-success reveal" id="successMessage">
+        <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--green); margin-bottom: 2rem; display: block;"></i>
+        <h2 style="font-size: 2.5rem; color: var(--dark); margin-bottom: 1rem;">Interest Submitted!</h2>
+        <p style="font-size: 1.2rem; color: var(--text-light); line-height: 1.6;">Thank you for your interest! We've received your submission and our team will get in touch with you shortly to discuss available opportunities.</p>
+        <a href="../index.html" class="btn-primary" style="margin-top: 3rem; display: inline-flex;">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
+          </div>
+          <p>Planting the seeds of abundance, wellness, and financial freedom — one community at a time.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Initiative</a></li>
+            <li><a href="../index.html#impact-map">Impact Map</a></li>
+            <li><a href="join.html">Get Involved</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fas fa-envelope"></i> hello@fruitforestfoundation.com</p>
+          <p><i class="fas fa-phone"></i> +1 (800) FRUIT-FOREST</p>
+          <p><i class="fas fa-map-marker-alt"></i> Global · Est. 2024</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('formCard').style.display = 'none';
+      document.getElementById('successMessage').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+
+</html>
