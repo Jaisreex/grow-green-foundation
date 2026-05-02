@@ -315,6 +315,33 @@
         border-radius: 30px;
       }
     }
+
+    /* Footer Alignment Fix for Donate Page */
+    .donate-page .footer {
+      background: transparent;
+      border: none;
+      color: var(--white);
+      margin-top: 5rem;
+    }
+    .donate-page .footer-top {
+      border: none;
+      padding-bottom: 2rem;
+    }
+    .donate-page .footer-brand p,
+    .donate-page .footer-links-group h4,
+    .donate-page .footer-contact h4,
+    .donate-page .footer-links-group a,
+    .donate-page .footer-contact p,
+    .donate-page .footer-bottom p {
+      color: var(--white) !important;
+      opacity: 0.9;
+    }
+    .donate-page .footer-links-group a:hover {
+      color: var(--gold) !important;
+    }
+    .donate-page .footer-logo img {
+      filter: brightness(0) invert(1); /* Make logo white if it's dark */
+    }
   </style>
 </head>
 
@@ -487,6 +514,19 @@
           <li><a href="join.html">Get Involved</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
+      </div>
+      <div class="footer-links-group">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="donate.html">Donate Now</a></li>
+          <li><a href="join.html">Volunteer</a></li>
+          <li><a href="join.html">Partnership</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Connect</h4>
+        <p><i class="fas fa-envelope"></i> hello@fruitforest.com</p>
+        <p><i class="fas fa-phone"></i> +1 (800) FRUIT</p>
       </div>
     </div>
     <div class="footer-bottom">
