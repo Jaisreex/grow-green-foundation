@@ -1332,7 +1332,8 @@ img {
 
 /* ---------- WHY SECTION ---------- */
 .why-section {
-  padding: 6rem 0;
+  padding-top: 6rem;
+  padding-bottom: 0;
   background: linear-gradient(to right, #ffffff 0%, #ffffff 50%, #f1f8f0 50%, #f1f8f0 100%);
   position: relative;
   overflow: hidden;
@@ -1349,6 +1350,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding-bottom: 6rem; /* Keep text centered vertically with its own padding */
 }
 
 .stat-card {
@@ -1410,10 +1412,10 @@ img {
 
 .impact-img-full {
   width: 100%;
-  height: 100%; /* Fills the entire height of the column to match the text side */
+  height: 100%;
   object-fit: cover;
-  border-radius: 40px;
-  box-shadow: var(--shadow-lg);
+  border-radius: 40px 40px 0 0; /* Rounded top, flush bottom */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   border: none;
   margin-right: 0;
 }
