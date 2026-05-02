@@ -24,18 +24,37 @@
         margin: 5rem 0;
         text-align: left;
     }
-    .pillar-card { 
-        background: var(--white); 
-        padding: 3rem; 
+    /* Inner Cards with Color Flow Animation */
+    .pillar-card, .info-card, .reference-box { 
+        background: linear-gradient(135deg, var(--white) 0%, var(--white) 60%, #f1f8f0 100%);
+        background-size: 200% 200%;
+        padding: 3.5rem; 
         border-radius: 30px; 
         box-shadow: 0 15px 40px rgba(0,0,0,0.04);
         border: 1px solid rgba(0,0,0,0.02);
-        transition: transform 0.3s ease;
+        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        position: relative;
+        overflow: hidden;
     }
-    .pillar-card:hover { transform: translateY(-10px); }
+    .pillar-card:hover, .info-card:hover, .reference-box:hover { 
+        background-position: 100% 100%;
+        transform: translateY(-12px); 
+        box-shadow: 0 25px 60px rgba(45, 90, 39, 0.1);
+        border-color: var(--green-pale);
+    }
     .pillar-card i { font-size: 2.5rem; color: var(--green); margin-bottom: 1.5rem; display: block; }
-    .pillar-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--green-dark); }
-    .pillar-card p { font-size: 1rem; line-height: 1.7; margin-bottom: 0; }
+    .pillar-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--green-dark); font-weight: 800; }
+    .pillar-card p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 0; }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        margin: 4rem 0;
+        text-align: left;
+    }
+    .info-card h3 { color: var(--green-dark); margin-bottom: 1.5rem; font-size: 1.6rem; }
+    .info-card p { font-size: 1.1rem; color: var(--text-light); }
 
     /* Highlight Sections */
     .highlight-box { 
@@ -140,17 +159,32 @@
 
 <section class="legacy-reference">
   <div class="container">
-    <div class="reference-box reveal">
-      <h4>Old Content Reference (For Review)</h4>
-      <div style="opacity: 0.8; font-size: 0.95rem;">
-        <h3 style="margin-bottom: 1.5rem; color: var(--dark);">Tree Planting Initiative</h3>
+    <div class="info-grid">
+      <div class="info-card reveal">
+        <h3>Tree Planting Initiative</h3>
         <p>Our Tree Planting Initiative is the cornerstone of Fruit Forest Foundation. We don't just plant saplings; we design community orchards that serve as vibrant, self-sustaining food systems for urban and rural neighborhoods alike.</p>
-        <p style="margin-top: 1rem;">We focus exclusively on fruit-bearing and nutrient-rich indigenous trees that are compatible with the local climate, ensuring high survival rates and maximum community benefit.</p>
-        <ul style="margin-top: 1.5rem; list-style: none; padding-left: 0;">
-          <li><strong>Ecosystem Restoration:</strong> Improving soil health, supporting pollinators, and increasing local biodiversity.</li>
-          <li><strong>Food Security:</strong> Creating free, accessible food sources for people who need them most.</li>
-          <li><strong>Climate Mitigation:</strong> Naturally sequestering carbon and reducing the 'heat island' effect.</li>
-        </ul>
+      </div>
+      <div class="info-card reveal delay-1">
+        <h3>Climate Compatibility</h3>
+        <p>We focus exclusively on fruit-bearing and nutrient-rich indigenous trees that are compatible with the local climate, ensuring high survival rates and maximum community benefit.</p>
+      </div>
+    </div>
+
+    <div class="pillars-grid" style="margin-top: 0;">
+      <div class="pillar-card reveal">
+        <i class="fas fa-seedling"></i>
+        <h3>Ecosystem Restoration</h3>
+        <p>Improving soil health, supporting pollinators, and increasing local biodiversity through natural planting techniques.</p>
+      </div>
+      <div class="pillar-card reveal delay-1">
+        <i class="fas fa-apple-alt"></i>
+        <h3>Food Security</h3>
+        <p>Creating free, accessible food sources for people who need them most in public spaces and community gardens.</p>
+      </div>
+      <div class="pillar-card reveal delay-2">
+        <i class="fas fa-globe-americas"></i>
+        <h3>Climate Mitigation</h3>
+        <p>Naturally sequestering carbon and reducing the 'heat island' effect in urban environments through green cover.</p>
       </div>
     </div>
   </div>

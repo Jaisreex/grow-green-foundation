@@ -24,18 +24,37 @@
         margin: 5rem 0;
         text-align: left;
     }
-    .feature-card { 
-        background: var(--white); 
-        padding: 3rem; 
+    /* Inner Cards with Color Flow Animation */
+    .feature-card, .info-card, .reference-box { 
+        background: linear-gradient(135deg, var(--white) 0%, var(--white) 60%, #f1f8f0 100%);
+        background-size: 200% 200%;
+        padding: 3.5rem; 
         border-radius: 30px; 
         box-shadow: 0 15px 40px rgba(0,0,0,0.04);
         border: 1px solid rgba(0,0,0,0.02);
-        transition: transform 0.3s ease;
+        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        position: relative;
+        overflow: hidden;
     }
-    .feature-card:hover { transform: translateY(-10px); }
+    .feature-card:hover, .info-card:hover, .reference-box:hover { 
+        background-position: 100% 100%;
+        transform: translateY(-12px); 
+        box-shadow: 0 25px 60px rgba(45, 90, 39, 0.1);
+        border-color: var(--green-pale);
+    }
     .feature-card i { font-size: 2.5rem; color: var(--green); margin-bottom: 1.5rem; display: block; }
-    .feature-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--green-dark); font-weight: 800; }
-    .feature-card p { font-size: 1rem; line-height: 1.7; margin-bottom: 0; }
+    .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--green-dark); font-weight: 800; }
+    .feature-card p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 0; }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        margin: 4rem 0;
+        text-align: left;
+    }
+    .info-card h3 { color: var(--green-dark); margin-bottom: 1.5rem; font-size: 1.6rem; font-weight: 800; }
+    .info-card p { font-size: 1.1rem; color: var(--text-light); }
 
     /* Highlight Sections */
     .highlight-box { 
@@ -137,12 +156,14 @@
 
 <section class="legacy-reference">
   <div class="container">
-    <div class="reference-box reveal">
-      <h4>Old Content Reference (For Review)</h4>
-      <div style="opacity: 0.8; font-size: 0.95rem;">
-        <h3 style="margin-bottom: 1.5rem; color: var(--dark);">Holistic Wellness Program</h3>
-        <p>Our Wellness Coaching focuses on the vital connection between individual health and planetary health. We provide community members with the education needed to make informed choices about nutrition, exercise, and mental well-being.</p>
-        <p style="margin-top: 1rem;">From workshops on plant-based diets to stress-management sessions in our fruit forests, we create a supportive environment where health is seen as a communal asset.</p>
+    <div class="info-grid">
+      <div class="info-card reveal">
+        <h3>Holistic Health Focus</h3>
+        <p>Our Wellness Coaching focuses on the vital connection between individual health and planetary health. We provide community members with the education needed to make informed choices about nutrition and mental well-being.</p>
+      </div>
+      <div class="info-card reveal delay-1">
+        <h3>Communal Wellbeing</h3>
+        <p>From workshops on plant-based diets to stress-management sessions in our fruit forests, we create a supportive environment where health is seen as a communal asset and a shared journey.</p>
       </div>
     </div>
   </div>

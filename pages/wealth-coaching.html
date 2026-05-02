@@ -24,18 +24,37 @@
         margin: 5rem 0;
         text-align: left;
     }
-    .wealth-card { 
-        background: var(--white); 
-        padding: 3rem; 
-        border-radius: 35px; 
-        box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-        border: 1px solid rgba(0,0,0,0.01);
-        transition: transform 0.3s ease;
+    /* Inner Cards with Color Flow Animation */
+    .wealth-card, .info-card, .reference-box { 
+        background: linear-gradient(135deg, var(--white) 0%, var(--white) 60%, #f1f8f0 100%);
+        background-size: 200% 200%;
+        padding: 3.5rem; 
+        border-radius: 30px; 
+        box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+        border: 1px solid rgba(0,0,0,0.02);
+        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        position: relative;
+        overflow: hidden;
     }
-    .wealth-card:hover { transform: translateY(-10px); }
+    .wealth-card:hover, .info-card:hover, .reference-box:hover { 
+        background-position: 100% 100%;
+        transform: translateY(-12px); 
+        box-shadow: 0 25px 60px rgba(45, 90, 39, 0.1);
+        border-color: var(--green-pale);
+    }
     .wealth-card i { font-size: 2.5rem; color: var(--green); margin-bottom: 1.5rem; display: block; }
-    .wealth-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--green-dark); font-weight: 800; }
-    .wealth-card p { font-size: 1rem; line-height: 1.7; margin-bottom: 0; }
+    .wealth-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--green-dark); font-weight: 800; }
+    .wealth-card p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 0; }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        margin: 4rem 0;
+        text-align: left;
+    }
+    .info-card h3 { color: var(--green-dark); margin-bottom: 1.5rem; font-size: 1.6rem; font-weight: 800; }
+    .info-card p { font-size: 1.1rem; color: var(--text-light); }
 
     /* Highlight Sections */
     .quote-box { 
@@ -138,12 +157,14 @@
 
 <section class="legacy-reference">
   <div class="container">
-    <div class="reference-box reveal">
-      <h4>Old Content Reference (For Review)</h4>
-      <div style="opacity: 0.8; font-size: 0.95rem;">
-        <h3 style="margin-bottom: 1.5rem; color: var(--dark);">Sustainable Wealth Creation</h3>
-        <p>Our Wealth Coaching program empowers communities by providing the knowledge needed for financial self-sufficiency. We teach individuals how to manage resources ethically and sustainably, mirroring the growth patterns of the forests we plant.</p>
-        <p style="margin-top: 1rem;">Through workshops on micro-investing and ethical finance, we help participants build lasting value that benefits both their families and the broader ecosystem.</p>
+    <div class="info-grid">
+      <div class="info-card reveal">
+        <h3>Sustainable Prosperity</h3>
+        <p>Our Wealth Coaching program empowers communities by providing the knowledge needed for financial self-sufficiency. We teach individuals how to manage resources ethically and sustainably, mirroring the growth of nature.</p>
+      </div>
+      <div class="info-card reveal delay-1">
+        <h3>Ethical Finance</h3>
+        <p>Through workshops on micro-investing and ethical finance, we help participants build lasting value that benefits both their families and the broader ecosystem through community-driven initiatives.</p>
       </div>
     </div>
   </div>
