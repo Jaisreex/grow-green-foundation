@@ -3096,17 +3096,3 @@ img {
 .impact-card {
   ...
 }
-
-/* WHY SECTION IMAGE ALIGNMENT */
-.why-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
-
-.why-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
