@@ -263,17 +263,7 @@ window.switchTab = function(event, tabId) {
   }
 };
 
-window.toggleHomeCard = function(cardId) {
-  const card = document.getElementById(cardId);
-  const btn = card.querySelector('.btn-expand-card');
-  const isExpanded = card.classList.toggle('expanded');
-  
-  if (isExpanded) {
-    btn.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
-  } else {
-    btn.innerHTML = 'Learn More <i class="fas fa-chevron-down"></i>';
-  }
-};
+
 
 
 
