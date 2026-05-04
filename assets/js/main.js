@@ -238,7 +238,7 @@ function showToast(message, type = 'green') {
   setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity .3s ease'; setTimeout(() => toast.remove(), 300); }, 4000);
 }
 
-};
+
 
 window.switchTab = function(event, tabId) {
   event.preventDefault();
