@@ -461,52 +461,79 @@
 
       <div class="opp-grid">
         <!-- Card 1 -->
-        <div class="opp-card reveal" tabindex="0" onclick="handleOppClick(event, 'pages/volunteer.html')">
+        <div class="opp-card reveal volunteer-card-home" id="volunteer-home">
           <div class="opp-card-img" style="background-image: url('assets/images/about_hero_nature.png');"></div>
           <div class="opp-icon-wrapper">
             <i class="fas fa-hands-helping"></i>
           </div>
-          <h3>Volunteer With Us</h3>
-          <p>Be a part of Fruit Forest Foundation’s mission to create greener and healthier communities. Join our tree
-            planting drives and help plant fruit trees in public spaces that provide free fruits for people in need,
-            support birds and pollinators, and improve the environment for everyone. Our volunteers are the soul of our
-            trust, turning empty spaces into vibrant orchards that feed generations.</p>
-          <div class="opp-arrow">
-            <i class="fas fa-arrow-right"></i>
+          <div class="card-front-content">
+            <h3>Volunteer With Us</h3>
+            <p>Join our mission to create greener, healthier communities through community tree planting and hands-on environmental action.</p>
+            <button class="btn-expand-card" onclick="event.stopPropagation(); toggleHomeCard('volunteer-home')">
+              Learn More <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          
+          <div class="card-expanded-content">
+            <div class="about-role">
+              <p>Be a part of Fruit Forest Foundation’s mission to create greener and healthier communities. Join our tree planting drives and help plant fruit trees in public spaces that provide free fruits for people in need, support birds and pollinators, and improve the environment for everyone. Our volunteers are the soul of our trust, turning empty spaces into vibrant orchards that feed generations.</p>
+            </div>
+            <div class="card-cta">
+              <a href="pages/join.html" class="btn-primary" style="width: 100%; justify-content: center;">👉 Become a Volunteer</a>
+            </div>
           </div>
         </div>
 
+
         <!-- Card 2 -->
-        <div class="opp-card reveal delay-1" tabindex="0" onclick="handleOppClick(event, 'pages/partner.html')">
+        <div class="opp-card reveal delay-1 partner-card-home" id="partner-home">
           <div class="opp-card-img" style="background-image: url('assets/images/fruit_plantation_hero.png');"></div>
           <div class="opp-icon-wrapper">
             <i class="fas fa-handshake"></i>
           </div>
-          <h3>Collaborate & Partner</h3>
-          <p>Work together with Fruit Forest Foundation to expand fruit tree plantations and create sustainable
-            ecosystems. NGOs, schools, nurseries, and organizations can partner with us to bring fresh food and
-            environmental awareness to more communities. Together, we build resilient food systems that nourish both
-            people and the planet through strategic partnerships.</p>
-          <div class="opp-arrow">
-            <i class="fas fa-arrow-right"></i>
+          <div class="card-front-content">
+            <h3>Collaborate & Partner</h3>
+            <p>Scale impact by partnering with us to build resilient food systems and expand fruit forest ecosystems globally.</p>
+            <button class="btn-expand-card" onclick="event.stopPropagation(); toggleHomeCard('partner-home')">
+              Learn More <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          
+          <div class="card-expanded-content">
+            <div class="about-role">
+              <p>Work together with Fruit Forest Foundation to expand fruit tree plantations and create sustainable ecosystems. NGOs, schools, nurseries, and organizations can partner with us to bring fresh food and environmental awareness to more communities. Together, we build resilient food systems that nourish both people and the planet through strategic partnerships.</p>
+            </div>
+            <div class="card-cta">
+              <a href="pages/partner.html" class="btn-primary" style="width: 100%; justify-content: center;">🤝 Partner With Us</a>
+            </div>
           </div>
         </div>
 
+
         <!-- Card 3 -->
-        <div class="opp-card reveal delay-2" tabindex="0" onclick="handleOppClick(event, 'pages/opportunities.html')">
+        <div class="opp-card reveal delay-2 opportunities-card-home" id="opportunities-home">
           <div class="opp-card-img" style="background-image: url('assets/images/wellness_coaching_hero.png');"></div>
           <div class="opp-icon-wrapper">
             <i class="fas fa-seedling"></i>
           </div>
-          <h3>Explore Opportunities</h3>
-          <p>Be part of initiatives that promote wellness coaching, healthy living, and environmental awareness. Learn
-            and share knowledge about building long-term health, financial wellbeing, and sustainable lifestyles while
-            contributing to a greener and more compassionate world. We empower individuals to grow alongside nature,
-            fostering total community wellness.</p>
-          <div class="opp-arrow">
-            <i class="fas fa-arrow-right"></i>
+          <div class="card-front-content">
+            <h3>Explore Opportunities</h3>
+            <p>Discover programs for wellness, sustainability, and education to empower individuals and foster community health.</p>
+            <button class="btn-expand-card" onclick="event.stopPropagation(); toggleHomeCard('opportunities-home')">
+              Learn More <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          
+          <div class="card-expanded-content">
+            <div class="about-role">
+              <p>Be part of initiatives that promote wellness coaching, healthy living, and environmental awareness. Learn and share knowledge about building long-term health, financial wellbeing, and sustainable lifestyles while contributing to a greener and more compassionate world. We empower individuals to grow alongside nature, fostering total community wellness.</p>
+            </div>
+            <div class="card-cta">
+              <a href="pages/opportunities.html" class="btn-primary" style="width: 100%; justify-content: center;">🔍 View All Programs</a>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
