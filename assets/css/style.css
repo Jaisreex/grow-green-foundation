@@ -1332,27 +1332,24 @@ img {
 
 /* ---------- WHY SECTION ---------- */
 .why-section {
-  padding-top: 6rem;
-  padding-bottom: 0;
-  background: linear-gradient(to right, #ffffff 0%, #ffffff 50%, #f1f8f0 50%, #f1f8f0 100%);
+  padding: 8rem 0;
+  background: var(--bg-soft);
   position: relative;
   overflow: hidden;
 }
 
 .why-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 5rem;
-  align-items: stretch;
-  /* Ensures both columns are the same height */
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
 .why-stats {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding-bottom: 6rem;
-  /* Keep text centered vertically with its own padding */
+  gap: 1.5rem;
+  text-align: left;
 }
 
 .stat-card {
@@ -1414,14 +1411,12 @@ img {
 }
 
 .impact-img-full {
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 40px 40px 0 0 !important;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1) !important;
-  border: none !important;
-  margin-right: 0 !important;
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  object-fit: cover;
+  border-radius: 40px;
+  box-shadow: var(--shadow-lg);
 }
 
 .image-experience-tag {
@@ -3312,4 +3307,11 @@ img {
     margin-top: 1rem;
     padding-bottom: 2rem;
   }
+}
+
+.why-subtitle {
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  color: var(--text-light);
+  font-size: 1.1rem;
 }
